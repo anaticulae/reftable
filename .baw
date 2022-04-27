@@ -1,0 +1,6 @@
+[project]
+short = reftable
+name = nice to know
+
+[release]
+fail_on_finding = True
