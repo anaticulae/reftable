@@ -11,7 +11,7 @@ import utila
 
 import reftable
 
-DESCRIPTION = 'TODO'
+DESCRIPTION = ''
 
 WORKPLAN = [
     utila.create_step(
