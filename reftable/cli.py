@@ -15,6 +15,16 @@ DESCRIPTION = 'TODO'
 
 WORKPLAN = [
     utila.create_step(
+        'abbrev',
+        inputs=[
+            utila.ResultFile(producer='rawmaker', name='text_text'),
+            utila.ResultFile(producer='rawmaker', name='text_positions'),
+            utila.ResultFile(producer='rawmaker', name='oneline_text_text'),
+            utila.ResultFile('rawmaker', name='oneline_text_positions'),
+        ],
+        output=('abbrev',),
+    ),
+    utila.create_step(
         'toc',
         inputs=[
             utila.ResultFile(producer='rawmaker', name='oneline_text_text'),

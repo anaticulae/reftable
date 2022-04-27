@@ -44,6 +44,7 @@ if __name__ == "__main__":
         ],
         packages=[
             'reftable',
+            'reftable.abbrev',
             'reftable.feature',
             'reftable.figure',
             'reftable.toc',

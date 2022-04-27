@@ -10,6 +10,10 @@
 import utila
 
 
+def abbreviation(path: str, prefix: str = '') -> str:
+    return utila.pathconnector(path, 'reftable', 'abbrev_abbrev', prefix)
+
+
 def toc(path: str, prefix: str = '') -> str:
     return utila.pathconnector(path, 'reftable', 'toc_toc', prefix)
 
