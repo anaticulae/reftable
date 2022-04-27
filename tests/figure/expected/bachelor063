@@ -1,0 +1,30 @@
+Korotkow-Geräusche bei der auskultatorischen Blutdruckmessung [Elt01]
+Manschettendruckverlauf und Oszillationen bei der oszillometrischen Blutdruckmessung [Elt01]
+Volumenkompensationsmethode nach Penaz [Elt01]
+Messverfahren nach R. Aaslid und AO. Brubakk [Aas81]
+Schematische Darstellung einer aufgesetzten Ultraschall-Doppler-Sonde [Pau11]
+Grundstruktur des Regelkreises [nach Lun10]
+Digitalisierung mit Abtast-Halteglied [Reu08]
+Sprungantwort eines idealen PI-Reglers
+Einfache LabVIEW-Operation
+Blutdruckverlauf während eines Valsalva-Manövers
+Bestehender Versuchsaufbau vor der Optimierung
+Blockdiagramm des ersten Modellentwurfs
+Optimierung der Regelschleife - Zeitsteuerung Messschleife
+Optimierung der Regelschleife - Puffer nach dem „FIFO“-Prinzip
+Optimierung der Regelschleife - Regelalgorithmus (PI)
+Valsalva-Press-Versuch mit altem Aufbau
+Valsalva-Press-Versuch mit neuem Aufbau
+Spannungsverteiler und 24V-Netzteil
+Verteilerplatine
+Registerkartenelement "Voreinstellungen" der Bedienoberfläche
+Registerkartenelement "Wiedergabe" der Bedienoberfläche mit gespeicherter Messung
+Frontpanel des Messprogramms
+Optimierte Sondenfixierung
+Struktur- und Signalflussplan - Legende
+Struktur- und Signalflussplan - Übersicht Laboraufbau
+Struktur- und Signalflussplan - Detailansicht Druckerzeugungseinheit
+Struktur- und Signalflussplan - Detailansicht Mess-PC
+Auswertung der Testmessungen - Beispiel für oszillometrische Messung
+Auswertung der Testmessungen - Vergleich der ermittelten MAP-Werte
+Auswertung der Testmessungen - Qualität der oszillometrischen Anpassung

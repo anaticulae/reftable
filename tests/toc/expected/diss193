@@ -1,0 +1,101 @@
+Acknowledgment
+Abstract
+List of figures
+List of tables
+List of abbreviations
+INTRODUCTION AND MOTIVATION
+    Background description of the research
+    Research Aim and Objective
+    Research Overview
+BACKGROUND DESCRIPTION OF EARTH’S ATMOSPHERE
+    Troposphere
+    Stratosphere
+    Mesosphere
+    Thermosphere
+    Ionosphere
+        Formation of the ionosphere
+        Ionization
+            Ionization photochemical process
+            Charge transfer photochemical process
+        Recombination
+            Radiative recombination photochemical process
+            Dissociative recombination photochemical process
+    Variations in the ionosphere
+        Spatial variations
+            Height dependent
+            Latitude dependent
+        Temporal variations
+            Regular variations
+            Irregular variations
+    Transport and dynamic processes in the ionosphere
+    Ionospheric conductivity based on altitude
+TIDS BACKGROUND
+    Atmospheric Gravity Waves (AGWs)
+    Medium Scale Travelling Ionospheric Disturbances (MSTIDs)
+    MSTIDs regional study review
+    Characteristics of day and night time MSTIDs
+    Causes of MSTIDS
+INSTRUMENTATION AND MEASUREMENTS
+    Global Navigation Satellite Systems (GNSS) general concept
+    Ionospheric effects on the GPS Signals
+    Ionospheric refraction
+    GPS Observation equation
+        Ionospheric observable
+    COSMIC satellite data
+    Methodology
+        Quiet day selection process for TEC estimate
+        Singular spectrum analysis
+        Estimation of Detrended TEC
+        Estimation of MSTIDs Characteristics
+COMPUTATION RESULTS
+    Characterization of ionosphere over African EIA
+    Daily variation of ionospheric TEC
+    Diurnal variation of ionospheric TEC
+    Seasonal variation of ionospheric TEC
+    Long term time series of ionospheric TEC within EIA
+    Solar indices dependence of ionospheric TEC
+    Discussion
+MSTIDs COMPUTATION RESULTS AT NORTH AFRICAN MID-LATITUDE
+    North Africa GPS receiver stations description
+    Perturbed and Unperturbed TEC profile depicting MSTIDs
+        Estimation of MSTIDs Period using FFT
+        Two-dimensional observation of MSTIDs over North Africa
+        Observation of MSTIDs on DOY 066, March 2010
+    Local observations of MSTIDs over the North African region
+    Local and seasonal dependence of MSTIDs amplitudes
+    MSTIDs occurrence count
+    Estimation of MSTIDs characteristics
+    Regional distribution of MSTIDs on a spatio-temporal map
+    Discussion
+MSTIDs COMPUTATION RESULTS AT AFRICAN EQUATORIAL AND LOW LATITUDE
+    A brief overview of Equatorial and low latitude MSTIDs previous result
+    Equatorial and low latitude Africa GPS receiver stations description
+    Wave-like structures depicting MSTIDs along the Equatorial and low latitude on selected days
+        Perturb TEC profile at selected stations depicting MSTIDs at NH and SH
+        Two-dimensional observation of MSTIDs
+    MSTIDs equatorial and low latitude characteristics
+        Local observations of MSTIDs over selected region in NH and SH of Africa
+        Annual and seasonal dependence of MSTIDs amplitude at NH
+        MSTIDs characteristics at NH and SH
+    Regional distribution of MSTIDs on a spatio-temporal map over low latitude
+    Wavelet analysis of MSTIDs over low latitude
+        Continuous wavelet transform
+    Discussion
+        Continuous wavelet transform
+        Two-dimensional observation of MSTIDs along the Equatorial and low latitude
+        Local observation, seasonal characteristics and interannual dependence of MSTIDs over NH and SH of Africa
+        MSTIDs propagation direction and its characteristics
+SIMULTENEOUS OBSERVATION AND HEMISPHERIC CONJUGACY OF MSTIDs OVER AFRICAN REGION
+    Simultaneous observations of MSTIDs at NH and SH
+    Two-dimensional observation of MSTIDs at NH and SH on 21st September, 2011
+    Observation of conjugate MSTIDs during daytime on 21st September, 2011
+    Discussion
+CONCLUSIONS AND SUGGESTIONS FOR FURTHER RESEARCH
+    Conclusions
+        Interannual variation of characterization of the ionospheric TEC
+        Climatology of MSTIDs over Northern Mid-latitude, and Equatorial and low latitude
+        MSTIDs over Northern Mid-latitude
+        MSTIDs over the Equatorial and low latitude region
+        Simultaneous and hemispheric conjugacy of observed MSTIDs
+    Further research
+REFERENCES

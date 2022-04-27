@@ -1,0 +1,44 @@
+introduction
+    Problem definition
+    Contributions
+    Outline of the thesis
+background
+    System Dependability
+    Distributed system observability
+    Artificial intelligence for IT systems
+    Anomaly detection
+challenges and overview
+    Anomaly detection challenges in distributed software systems
+    Conceptual overview
+anomaly detection in metric data
+    Metano: anomaly detection and classification in metrics
+    Evaluation
+    Related work
+    Chapter summary
+anomaly detection in log data
+    Log parsing
+    NuLog: neural log parsing
+    From log representations to log anomaly detection
+    Log anomaly detection
+    Logsy: Classification-based anomaly detection on logs
+    Evaluation
+    Related work
+    Chapter summary
+anomaly detection in distributed tracing data
+    Sequence learning for trace anomaly detection
+    Tracy: self-supervised anomaly detection in distributed traces
+    Evaluation
+    Related work
+    Chapter summary
+multi-source detection of complex anomalies
+    Complex anomalies in distributed systems
+    Triano: integration of the anomaly detectors
+    Evaluation
+contents
+    Related work
+    Chapter summary
+conclusion
+appendix
+    Multimodal anomaly detection by learning joint representations
+    Results
+bibliography

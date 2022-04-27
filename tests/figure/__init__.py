@@ -1,18 +1,23 @@
 # =============================================================================
 # C O P Y R I G H T
 # -----------------------------------------------------------------------------
-# Copyright (c) 2019-2022 by Helmut Konrad Fahrendholz. All rights reserved.
+# Copyright (c) 2020-2022 by Helmut Konrad Fahrendholz. All rights reserved.
 # This file is property of Helmut Konrad Fahrendholz. Any unauthorized copy,
 # use or distribution is an offensive act against international law and may
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
-import utila
-import utilatest
+import serializeraw
 
 import reftable
+import tests
 
-power.setup(reftable.ROOT)
 
-run, fail = utilatest.create_cli_runner(reftable)
+def extract_table(source, pages, monkeypatch, testdir):
+    pages = ','.join((str(item) for item in pages)) if pages else ''
+    pages = f'--pages={pages}' if pages else ''
+    cmd = f'-i {source} --table {pages}'
+    tests.run(cmd, monkeypatch=monkeypatch)
+    path = reftable.path.table(testdir.tmpdir)
+    table = serializeraw.load_toc(path)
+    return table

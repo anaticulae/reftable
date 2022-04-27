@@ -1,0 +1,67 @@
+Einführung
+    Motivation und Zielsetzung
+    Aufbau der Arbeit
+Grundlagen
+    Smartphones
+        Google Android
+        Apple iPhoneOS
+        Weitere Mobilplattformen
+        Zusammenfassung
+    Drahtlose Kommunikationstechnologien
+        Drahtlostechnologien für Mobilfunknetze
+        Drahtlostechnologien für lokale Netzwerke (WLAN)
+        Drahtlostechnologien für Nahbereichsnetzwerke (WPAN)
+        Zusammenfassung
+    Gebäudeautomation
+        KNX/EIB
+        Weitere Bus-Technologien zur Gebäudeautomation
+    Beispiele für Anwendungen zum mobilen Zugriffauf Gebäu- deautomationssysteme
+    Zusammenfassung
+Anforderungsanalyse
+    Anwendungsumgebung
+        Einsatzgebiet
+        Rahmenbedingungen
+    Systemanforderungen
+    Analyse der Anwendungsfälle
+        Szenario 1: Anwendung läuft im lokalen Netzwerk
+        Szenario 2: Anwendung läuft nicht im lokalen Netzwerk oder ist inaktiv
+Systementwurf
+    Architektur
+        Datenschicht
+        Steuerungsschicht
+        Präsentationsschicht
+Implementierung
+    iPhone-Anwendung zur Steuerung und Überwachung von KNX-Systemen
+        Entwicklungsumgebung
+        Projektstruktur
+        Datenschicht
+        Steuerungsschicht
+        Präsentationsschicht
+Evaluierung und Demonstration des Prototypen
+    Evaluierung des Systems
+        Modularität und Erweiterbarkeit
+        Funktionalität und Benutzbarkeit
+    Demonstration des Prototypen
+        Anwendungsstart und Konfiguration eines Projektes
+        Auswahl von Projekten und KNX-Gruppen
+        Steuern und Überwachen von KNX-Geräten
+Zusammenfassung und Ausblick
+    Zusammenfassung
+    Ausblick
+Glossar
+Literatur
+Literaturverzeichnis
+Internetquellen
+Bildquellen
+Abbildungsverzeichnis
+Listings
+Tabellenverzeichnis
+A
+    Diagramme
+        Flussdiagramme
+        Flussdiagramm Gruppe steuern und überwachen
+        Klassendiagramme
+    Benutzerschnittstellen
+        Entwürfe der iPhone-Anwendung
+    Fotos
+        Aufbau der KNX-Gebäudeinstallation

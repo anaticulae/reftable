@@ -1,0 +1,37 @@
+Verknüpfung klassisches und AUTOSAR-Steuergerät
+linearer Bus und ein Einzelstern nach [WL11]
+Pegel bei der NRZ-Datenübertragung
+Nominelle Potentiale nach [WR10, Seite 214]
+Buszugriff Abitrierungsphase nach [WR10, Seite 216]
+CAN-Nachricht nach [WL11, Seite 19]
+Generierung für abstrakte Schnittstelle nach [Rum05, Seite 61]
+Parametrisierte Codegenerierung nach [Rum05, Seite 62]
+Kapselung der Zugriffe nach [JL07, Seite 389]
+Handgeschriebenes System
+Zusammengesetztes System
+Komplett integriertes System
+Umsetzung des Treiberkonzepts in Simulink nach [mat12a]
+S-Function Builder mit vier Eingangsports und einem Ausgangs- ports sowie ein S-Funktion-Block
+Möglichkeiten des Testens nach [JL07, Seite 253]
+Testfall durchführen nach [JL07, Seite 258]
+Ablauf Regressionstest nach [Lig09, Seite 194]
+MiL-Prinzip nach [Plu06, Seite 3]
+SiL-Prinzip
+Allgemeine Einordnung des Debuggings in den Testprozess nach [AT09, Abschnitt 8.2.3]
+Drehgestell Sensorverteilung
+Softwareentwicklung Übersicht
+Allgemeiner Ablauf der Entwicklung
+Allgemeiner Aufbau der Algorithmen
+Allgemeiner Ablauf des Algorithmus
+Nachrichtenformat
+Deserialisierung der Nachrichten
+Buffer Funktionsübersicht
+Histogramm zur Durchmesserbestimmung
+Einlesen vom Speicher
+MiL-Test für das Histogramm
+Manuelle Integration der Durchmesserberechnung
+Integrationstest Einlesen
+Manueller Test der Gesamtintegration
+MiL-Test zum Histogramm
+Integration Durchmesser
+SiL- und HiL-Test auf der OBU und dem Entwicklungsrechner

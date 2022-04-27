@@ -1,0 +1,48 @@
+Einleitung
+    Wachsende Bedeutung von CubeSats und Picosatelliten
+    Motivation und Zielsetzung
+Einführung und Grundlagen zu Thermalsystemen
+    Theoretische Grundlagen zur Wärmeübertragung im All
+        Wärmeleitung
+        Konvektiver Wärmeübergang
+        Wärmestrahlung
+    Umgebungsbedingungen im niederen Erdorbit
+    Notwendigkeit von Thermalkontrollsystemen in Raumfahrzeugen
+        Passive Thermalkontrollsysteme
+        Aktive Thermalkontrollsysteme
+Beschreibung von Latentwärmespeichern
+    Arten von Latentwärmespeichern
+    Einsatzmöglichkeiten von PCM zur Temperaturregulierung
+    Bisheriger Einsatz von PCM in der Raumfahrt
+Latentwärmespeicher zur Thermalkontrolle von Picosatelliten
+    Anforderungen an das Thermalkontrollsystem von Picosatelliten
+    Einsatz von Latentwärmespeichern bei Picosatelliten
+    Auswahl von Paraffn ials Phasen-Wechsel-Material
+    Thermalberechnungen von Phasen-Wechsel-Materialien
+    Konstruktive Maßnahmen zur Thermalkontrolle
+        Einfluss von Material- und Oberflächeneigenschaften
+        Strukturelle Wärmeverteilung
+        Thermalsimulationen
+IV Inhaltsverzeichnis Anhang A Thermalsimulation über 10 Erdumrundungen
+Experimentelle Untersuchungen zur Thermalkontrolle mittels Latentwärmespeicher
+    Herstellung der PCM Vergussmasse
+    Untersuchung der Druckfestigkeit der Vergussmasse
+    Durchführung der Thermaltests
+        Ermittlung der Temperaturwerte
+        Testablauf
+        Auslesen der Temperaturwerte
+    Ergebnisse der Thermaluntersuchungen
+Praktische Umsetzung des Thermalkontrollsystems im Projekt PiNaSys II
+    Projektbeschreibung PiNaSys II
+    Thermalkonzept der Picosatelliten
+    Praktische Umsetzung des Thermalkonzepts
+        Aufbau der Satelliten
+        Verwendete Strukturmaterialien
+        Thermalsimulationen
+        Einbringen des Lösungsansatz zum PCM-Einsatz
+        Thermaltests
+    Erste In-Orbit-Ergebnisse der Flugersatzmodelle
+Ausblick über weitere Anwendungsmöglichkeiten der PCM Vergussmasse
+Zusammenfassung
+Anhang B Temperaturverläufe der Demonstrationsmodelle
+Anhang C Abkühlverhalten der Proben A20 - A40 und B20 - B40

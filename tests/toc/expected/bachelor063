@@ -1,0 +1,54 @@
+Eidesstattliche Erklärung
+Danksagung
+Zusammenfassung
+Abstract
+Einleitung
+Grundlagen
+    Blutdruck
+        Invasive Messung des arteriellen Drucks
+        Nicht-invasive Messung des arteriellen Drucks
+    Ultraschall-Doppler-Blutflussmessung
+    Digitale Regelung
+        Grundprinzip der Regelungstechnik
+        Besonderheiten der digitalen Regelung
+        Der PI-Regler
+    Programmiersprache LabVIEW
+    Valsalva-Press-Versuch
+Aufgabenstellung
+    Bestehender Versuchsaufbau
+    Anforderungen an den neuen Versuchsaufbau
+Material und Methoden
+    Realisierung einer digitalen Steuerung/Regelung
+        Programmierung
+        Anpassung der Hardware
+    Anpassung der Messwerte mit alternativem Verfahren
+        Oszillometrische Bestimmung des mittleren arteriellen Blutdrucks
+        Anpassung der Druckwerte
+        Manuelle Eingabe alternativer Werte
+    Erstellung einer Bedienoberfläche
+        Anforderungen an die Bedienoberfläche
+        Hauptprogramm
+        Sub-VI „Messprogramm“
+    Überarbeitung der Sondenfixierung
+Ergebnisse
+    Optimierter Versuchsaufbau
+    Testmessungen
+        Durchführung
+        Ergebnisse
+Diskussion und Ausblick
+Anhang
+    Programmstruktur
+        Hauptprogramm
+        Sub-VI „Messprogramm“
+        Blockdiagramm der optimierten Regelschleife
+    Hardwareaufbau
+        Schalt- und Anschlusspläne
+        Zeichnungen
+    Sondenfixierung
+        Zeichnung Befestigungsblock
+    Testmessungen
+        Messprotokoll
+Literaturverzeichnis
+Abbildungsverzeichnis
+Glossar1
+Lebenslauf

@@ -7,12 +7,26 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
-import utila
-import utilatest
+import reftable.toc.decider
 
-import reftable
+EXAMPLE = [
+    reftable.toc.decider.ExtractionStatistic(
+        validitem_count=67,
+        group_count=13,
+        oneline_factor=0.31,
+    ),
+    reftable.toc.decider.ExtractionStatistic(
+        validitem_count=67,
+        group_count=17,
+        oneline_factor=0.53,
+    ),
+    reftable.toc.decider.ExtractionStatistic(
+        validitem_count=64,
+        group_count=17,
+        oneline_factor=0.53,
+    ),
+]
 
-power.setup(reftable.ROOT)
 
-run, fail = utilatest.create_cli_runner(reftable)
+def test_toc_decider_sort_decisions():
+    assert sorted(EXAMPLE) == EXAMPLE

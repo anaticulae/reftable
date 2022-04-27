@@ -1,0 +1,74 @@
+Symbolverzeichnis
+Abkürzungsverzeichnis
+Einleitung
+    Motivation
+    Stand der Technik
+        Längs- und Querregelung
+        Kinetose in Fahrzeugen
+    Zielsetzung
+    Aufbau der Arbeit
+Kinetose in Fahrzeugen
+    Bewegungswahrnehmung
+        Visuelles System
+        Somatosensorisches System
+        Vestibuläres System (Gleichgewichtsorgan)
+    Zentrales Nervensystem und Bewegungskontrolle
+    Entstehungsursachen von Kinetose
+        SC-Theorie
+        SVC-Theorie
+    Modellierung von Kinetose
+        Struktur des SVC-Modells
+        Somatosensorische Wahrnehmung
+        Modellierung des vestibulären Systems
+        ZNS-Beobachter
+        Berechnung des Motion Sickness Incidence
+        Systemanalyse bei vertikaler Anregung
+Regelstrecke und Prädiktionsmodell
+    Struktur
+    Querdynamik
+        Dynamisches Einspurmodell
+        Dynamik des Lenksystems
+    Längsdynamik
+    Prädiktionsmodelle
+        Zeitkontinuierliches Prädiktionsmodell
+        Zeitdiskretes Prädiktionsmodell
+    Referenzpfad
+    Analyse der Regelstrecke
+Modellprädiktive Regelung
+    Funktionsprinzip
+        MPC ohne Beschränkungen
+        MPC mit Beschränkungen
+    Parameter des adaptiven MPC
+    Analyse des geschlossenen Regelkreises
+Vermeidung von Kinetose
+    Einfluss unterschiedlicher Fahrmanöver und Fahrbahnunebenheiten auf den MSI
+    Systemstruktur mit Kinetosemodell
+    Sollwertgenerator
+        Geschwindigkeitsplanung
+        Sollpfadplanung
+    Simulationsergebnisse
+        Handlingkurs mit MSI-adaptiver Geschwindigkeitsplanung
+        Handlingkurs mit krümmungsabhängiger Sollpfadplanung
+Implementierung und Test in einem skalierten Fahrzeug
+    Versuchsaufbau
+        Bewegungs-Erfassung mittels Marker
+        Verzeichnungskorrektur des Kamerabildes
+        Globale Lokalisierung
+    Modellbildung
+        Identifikation der Längsdynamik
+        Identifikation der Lenkwinkelregelkreisdynamik
+        Prädiktionsmodell
+        Bestimmung der Fahrzeugparameter
+    Echtzeitfähigkeit
+        Anforderungen
+        Komplexität der Echtzeitdatenverarbeitung
+        Messergebnisse
+        Rechenleistung eingebetteter Systeme
+    Fahrversuche
+Zusammenfassung
+Ausblick
+Anhang
+    Parameter der Fahrzeugmodelle
+    Parameter des Kinetosemodells
+    Komponenten des Versuchsaufbaus
+Literaturverzeichnis

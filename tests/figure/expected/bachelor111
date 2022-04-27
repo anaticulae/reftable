@@ -1,0 +1,42 @@
+Beispiele aktueller Smartphone-Plattformen
+Android System Stack
+Schichten des iPhoneOS
+DatePicker unter OS X optimiert für Mauseingabe
+DatePicker unter iPhoneOS optimiert für Touch-Eingabe
+GSM-Funkzellen
+Kommunikation bei konventioneller Elektroinstallation
+Informationsübertragung über das Bussystem KNX
+Topologie des KNX-Systems
+Informationsübertragung über das Bussystem LON
+Beispiel eines Info-Panels mit Visualisierung (Gira)
+Beispiel nativer mobiler KNX-Anwendungen (m..Remote und ayControl)
+Darstellung der Anwendungsumgebung
+Anwendungsfälle des Szenario 1
+Anwendungsfälle des Szenario 2
+Architektur des Systems
+MVC-Architekturmuster nach Apple
+Aufbau eines KNX-Telegramms
+Prozesskette beim Ausliefern von Nachrichten über die Server- Anwendung
+Darstellung der Abhängigkeiten der Ansichten (SiteMap)
+Auswahl von Interaktionselementen der Gruppendetailansicht
+Verknüpfung von Präsentationsobjekten zwischen Steuerungs- schicht in Xcode und Präsentationsschicht in IB
+Im Prototypen umgesetzte Anwendungsfälle
+Demonstration: Start der Anwendung und HomeView
+Konfiguration eines Projektes (Gruppen- bzw. Gerätekonfigu- ration)
+Auswahl von Projekten (Home-Ansicht) bzw. KNX-Gruppen (Gruppen-Ansicht)
+Benutzerschnittstellen zur Steuerung und Überwachung von KNX-Geräten (Schalten bzw. Dimmen)
+Demonstration: Schalten einer Lichtquelle
+Demonstration: Dimmen einer Lichtquelle
+Fortsetzung Demonstration: Dimmen einer Lichtquelle
+Prozesskette beim Steuern und Überwachen von KNX-Gruppen
+Prozesskette beim Anlegen eines neuen Projektes
+Prozesskette beim Senden eines Telegramms
+Prozesskette beim eines Telegramms
+A
+Anwendung
+    Paketdiagramm uniKNX - Komponentenübersicht
+    Entwurf der Start-Ansicht der iPhone-Anwendung
+    Entwurf der Gruppenlistenansicht der iPhone-Anwendung
+    Entwurf der Gruppendetailansicht der iPhone-Anwendung
+    Entwurf der Konfigurationsansicht der iPhone-Anwendung
+    KNX-Gebäudeautomationsinstallation

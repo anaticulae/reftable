@@ -1,0 +1,43 @@
+# =============================================================================
+# C O P Y R I G H T
+# -----------------------------------------------------------------------------
+# Copyright (c) 2019-2022 by Helmut Konrad Fahrendholz. All rights reserved.
+# This file is property of Helmut Konrad Fahrendholz. Any unauthorized copy,
+# use or distribution is an offensive act against international law and may
+# be prosecuted under federal law. Its content is company confidential.
+# =============================================================================
+
+import power
+import serializeraw
+import utilatest
+
+import reftable.toc.strategy
+
+
+def headlines_frompath(path: str, pages=None):
+    loaded = serializeraw.create_pagetextcontentnavigators_frompath(
+        path,
+        pages=pages,
+        prefix='oneline',
+        validate_leftright=False,  # do not check writing text over border
+    )
+    result = reftable.toc.strategy.ExtractionData(content=loaded)
+    return result
+
+
+def master72_toc():
+    utilatest.fixture_requires(power.MASTER072_PDF)
+    return headlines_frompath(power.link(power.MASTER072_PDF), pages=(1, 2))
+
+
+def bachelor111_toc():
+    utilatest.fixture_requires(power.BACHELOR111_PDF)
+    return headlines_frompath(
+        power.link(power.BACHELOR111_PDF),
+        pages=(1, 2, 3, 4),
+    )
+
+
+def technical24_toc():
+    utilatest.fixture_requires(power.TECH024_PDF)
+    return headlines_frompath(power.link(power.TECH024_PDF), pages=(1,))

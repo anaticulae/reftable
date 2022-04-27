@@ -1,0 +1,34 @@
+Abbildungsverzeichnis
+Abkürzungsverzeichnis
+Einleitung
+Konzept
+    Leistungs- und Energiemessung
+    Aufbau
+    UART Modus
+    SD Card Modus
+    Verarbeitung auf Host-System
+Implementierung
+    Hardware Entwurf
+        MSP430 Mikrocontroller
+        Spannungsversorgung
+        Strommessschaltung
+        Ein- und Ausgänge
+        Benutzerschnittstelle
+        Gehäuse
+    Mikrocontrollerprogramm
+        Leistungs- und Energiemessung
+        UART
+        SD Card
+Dateisystem
+    Konfiguration des Messsystems
+    Auswertungs-/Empfängerprogramm
+Benutzungshinweise
+    Auswahl des Shuntwiderstands
+    Auswahl der Abtastrate
+    Verbinden der Messleitungen
+    Messung
+    Auswertung
+Beispielmessung an Temperaturlogger
+Verbesserungsmöglichkeiten
+Zusammenfassung
+Anhang

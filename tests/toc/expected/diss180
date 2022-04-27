@@ -1,0 +1,51 @@
+LIST OF FIGURES
+LIST OF TABLES
+ACKNOWLEDGMENTS
+CURRICULUM VITAE
+ABSTRACT OF THE DISSERTATION
+INTRODUCTION
+CHAPTER 1: Software Architecture
+    Run-time Abstraction
+    Elements
+    Configurations
+    Properties
+    Styles
+    Patterns and Pattern Languages
+    Views
+    Related Work
+    Summary
+CHAPTER 2: Network-based Application Architectures
+    Scope
+    Evaluating the Design of Application Architectures
+    Architectural Properties of Key Interest
+    Summary
+CHAPTER 3: Network-based Architectural Styles
+    Classification Methodology
+    Data-flow Styles
+    Replication Styles
+    Hierarchical Styles
+    Mobile Code Styles
+    Peer-to-Peer Styles
+    Limitations
+    Related Work
+    Summary
+CHAPTER 4: Designing the Web Architecture: Problems and Insights
+    WWW Application Domain Requirements
+    Problem
+    Approach
+    Summary
+CHAPTER 5: Representational State Transfer (REST)
+    Deriving REST
+    REST Architectural Elements
+    REST Architectural Views
+    Related Work
+    Summary
+CHAPTER 6: Experience and Evaluation
+    Standardizing the Web
+    REST Applied to URI
+    REST Applied to HTTP
+    Technology Transfer
+    Architectural Lessons
+    Summary
+CONCLUSIONS
+REFERENCES

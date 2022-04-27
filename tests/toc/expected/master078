@@ -1,0 +1,84 @@
+Einleitung
+Gebäudeautomation
+    Grundlagen
+    Bussysteme der Gebäudeautomation
+        Der Europäische Installationsbus (EIB)
+        LONWorks
+        LCN
+    Gemeinsamkeiten der Gebäudebussysteme
+        Sensoren in der Gebäudeautomation
+        Aktoren in der Gebäudeautomation
+        Applikationsmodule
+    Datentypen der Gebäudeautomationstechnik
+    Softwarewerkzeuge zur Gebäudeautomation
+        Die EIB Tool Software (ETS)
+        Konfigurationssoftware für LONWorks
+Anforderungen
+    Grundsätzliche Anforderungen
+        Ähnlichkeit zu bestehenden Systemen
+    Aktoren
+    Funktionale Anforderungen
+        Planung
+        Inbetriebnahme
+        Test
+        Betrieb
+        Datenverwaltung
+Lösungsansatz
+    Softwareentwicklungsprozeß
+    Programmiersprache
+    Werkzeuge
+    Einsatz von Entwurfsmustern
+    Grundprinzipien des Softwaresystems
+    Systemdaten
+        Anfallende Daten bei der Gebäudeautomation
+        Aufspaltung der projektbezogenen Daten
+        Gebäudestrukturdaten
+        Installationsdaten
+    Anbindung der Bussysteme
+        Unterstützung des EIB
+    Einbindung der EIB Gerätedaten
+        Umwandlung in XML
+        Relationen in den Daten
+    Auswahl passender Busgeräte
+        Funktionsgruppen
+    Programmierung der EIB Geräte
+        Schreiben der Applikationsdaten
+        Bestandteile einer EIB Applikation
+Implementierung
+    Systempaketstruktur
+        Systemname
+        Unterpakete
+    Dateistruktur des Systems
+    XML Systemdaten
+    Anbindung des EIB
+    Verarbeitung der EIB Gerätedaten
+        Konvertierung der ETS Daten nach XML
+        Verarbeitung der konvertierten XML Daten
+    Gerätesuche
+    EIB Applikationen
+    Programmierung der EIB Geräte
+        Eigene Threads zur Programmierung
+        Modifikation des Ethernet-Gateway
+    Projektglobale Klassen
+        Laden und Speichern von XML Daten
+        Die Klasse basys.Util
+        Internationalisierung
+    Die Java Client Applikation
+        Aufbau der graphischen Oberfläche
+        Projektbezogenes Arbeiten
+        Drag und Drop
+        Tabellenansichten der Projektstruktur
+        Einsatz des Command Entwurfsmusters
+        Inbetriebnahme der EIB Geräte
+    Web-Schnittstelle: Ein Servlet steuert EIB Geräte
+    Testklassen
+Fazit und Ausblick
+    Integration von CAD Daten
+    Unterstützung mehrerer Bussysteme
+    Versionsverwaltung
+    Sprachsteuerung
+    Serverkomponenten
+    Integration aller elektrischen Geräte im Gebäude
+Literaturverzeichnis
+Internet-Links
+LCN

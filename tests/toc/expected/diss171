@@ -1,0 +1,68 @@
+Abbildungsverzeichnis
+Tabellenverzeichnis
+Nomenklatur
+Einleitung
+    Motivation
+    Umfang dieser Arbeit
+Grundlagen und Voruntersuchungen
+    Physikalische Grundlagen von Gasentladungen
+    Grundlagen der (plasmaunterstützten) Verbrennung und der Verbrennungsinstabili- täten
+        Die Brenngeschwindigkeit, das Äquivalenzverhältnis und die Flammenleis- tung
+        Flammeninstabilität, Flammenantwort und Verbrennungslärm
+    Experimentelle Parameterstudie zur Pulsenergie
+        Methode zur Messung der Pulsenergie
+        Generischer Versuchsaufbau zur Parameterstudie
+        Resultate der Parameterstudie
+    Passive Maßnahmen zur Reduzierung des elektromagnetischen Störsignals
+    Kurzzusammenfassung
+Akustische Charakterisierung von NRP-Funkenentladungen
+    Schallerzeugungsmechanismen von chemisch reagierenden Gasen
+    Methode zur Erzeugung tieffrequent-modulierter NRP-Plasmasequenzen
+    Akustische Charakterisierung von NRP-Plasmasequenzen im Impedanz-Rohr
+        Versuchsaufbau
+        Bestimmung der akustischen Quellamplitude im Impedanz Rohr
+        Methode zur Bereinigung der Mikrofondaten vom korrelierten Störsignal
+    Ergebnisdiskussion: Messungen im Impedanzrohr
+        Reflexionsfaktor an beiden Rohrenden
+        Pulsenergie und Initialisierungspulse
+        Erfolg der Methode zur Reduzierung des korrelierten Störanteils
+        Einfluss der Pulsenergie auf die akustische Quellamplitude
+        Vergleich von gemessener und berechneter Quellamplitude
+    Kurzzusammenfassung
+Analyse der OH*-Chemilumineszenz einer mit NRP-Plasma angeregten, drallstabili- sierten Vormischflamme
+    Versuchsaufbau
+        Plasma-Flammen-Prüfstand
+        Kameraaufbau, Filtereigenschaften und optische Dichte
+    Analyse der Lichtemissionen nach dem Entladungsprozess
+        Lichtintensität, Aufstiegsgeschwindigkeit und Höhe
+        Abklingzeit, Intensität, Aufstiegshöhe und Pulsenergie
+    Methode zur Trennung der Flammenemissionen von den PSLE
+    Flammenantwort auf unmodulierte NRP-Plasmasequenzen
+    Dynamische Flammenantwort auf Anregung mit tieffrequent-modulierten NRP- Plasmasequenzen
+        Charakteristisches Schwingungsverhalten der OH*-Intensität und der CoLE- Position
+        Einfluss des Arbeitszyklus auf die phasengemittelte Flammenantwort
+    Definition der Flammentransferfunktion bei Anregung mit NRP-Plasma
+        Diskussion zum Offset der Transferfunktion
+        Einfluss der Flammenleistung auf die Transferfunktion
+        Einfluss des Äquivalenzverhältnisses auf die Transferfunktion
+    Kurzzusammenfassung
+Vergleich der Flammentransferfunktion bei Lautsprecher- und Plasmaanregung
+    Abschätzung des Temperatureinflusses auf die akustische Übertragungsfunktion zwischen Messposition und Düsenauslass
+    Definition der Flammentransferfunktion bei Lautsprecheranregung
+        Experimentelle Bestimmung der FTF
+        Verwendung der FTF zur Abschätzung kritischer Quarzglaslängen mit thermoakusitschen Instabilitäten
+    Vergleich der Flammenantwort bei Lautsprecher- und Plasmaanregung
+    Kurzzusammenfassung
+Regelung von thermoakustischen Instabilitäten mit NRP-Plasma
+    Regelungskonzepte basierend auf tiefrfequent-modulierten NRP-Plasmasequenzen
+        Der Phasenregler
+        Die modellprädiktive Regelung
+    Regelung thermoakustischer Instabilitäten im Rijke-Rohr
+        Instabilitätskontrolle mit Phasenregelung
+        Instabilitätskontrolle mit MPC
+    Regelung von Verbrennungsinstabilitäten im Flammenprüfstand
+        Einfluss von unmodulierten NRP-Plasmasequenzen auf die Verbrennungs- instabilitäten
+        Regelung mittels Phasenregelung
+        Regelung mittels MPC
+    Kurzzusammenfassung
+Fazit und Ausblick
