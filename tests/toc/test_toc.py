@@ -15,7 +15,7 @@ import utilatest
 
 import reftable.feature.toc
 import reftable.pageselector
-import reftable.toc.toc.create
+import reftable.toc.create
 
 
 @utilatest.requires(power.DOCU007_PDF)
@@ -32,7 +32,7 @@ def test_toc_groupby_level():
 
     tableofcontent = utila.flatten(tableofcontent.content)
 
-    result = reftable.toc.toc.create.groupby_level_numbered(tableofcontent)
+    result = reftable.toc.create.groupby_level_numbered(tableofcontent)
     assert result
     dumped = serializeraw.dump_toc(result)
     assert dumped

@@ -19,7 +19,7 @@ import utila
 import reftable.pageselector
 import reftable.toc.run
 import reftable.toc.strategy
-import reftable.toc.toc.create
+import reftable.toc.create
 
 # minimal percentage of tabletable lines per page
 TOFS_PER_PAGE_MIN = configo.HV_PERCENT_PLUS(default=20, limit=100)
@@ -68,7 +68,7 @@ def work(
     extracted = reftable.toc.run.extract(loaded)
     # prepare
     flat = utila.flatten(extracted.content)
-    leveled = reftable.toc.toc.create.groupby_level(flat)
+    leveled = reftable.toc.create.groupby_level(flat)
     # dump
     dumped = serializeraw.dump_toc(leveled)
     return dumped

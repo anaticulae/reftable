@@ -10,7 +10,7 @@
 import utila
 
 import reftable.toc.basic.lineregex
-import reftable.toc.toc.create
+import reftable.toc.create
 
 
 def parse_group(items, page: int) -> reftable.toc.TocLines:

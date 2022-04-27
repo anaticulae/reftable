@@ -50,7 +50,6 @@ if __name__ == "__main__":
             'reftable.toc',
             'reftable.toc.basic',
             'reftable.toc.strategy',
-            'reftable.toc.toc',
         ],
         entry_points={
             'console_scripts': ['reftable = reftable.cli:main',],

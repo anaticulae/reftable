@@ -12,7 +12,7 @@ import texmex
 import utila
 
 import reftable.toc.strategy.regex
-import reftable.toc.toc.create
+import reftable.toc.create
 
 HEADLINE_SIZE_MIN = configo.HV_FLOAT_PLUS(default=15.0)
 
@@ -48,8 +48,7 @@ def select_contentpages(
         # TODO: group.level fails on failing level
         if skip_higherqual_level_three:
             level3 = [
-                reftable.toc.toc.create.level(item.level)
-                for item in current_page
+                reftable.toc.create.level(item.level) for item in current_page
             ]
             level3 = [
                 item for item in level3

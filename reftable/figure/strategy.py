@@ -11,7 +11,7 @@ import serializeraw
 
 import reftable.figure.column
 import reftable.figure.normal
-import reftable.toc.toc.create
+import reftable.toc.create
 
 
 def run(
@@ -40,5 +40,5 @@ def run(
             pages=pages,
         )
         result = reftable.figure.column.run(ptcns)
-    result = reftable.toc.toc.create.groupby_level(result)  # pylint:disable=R0204
+    result = reftable.toc.create.groupby_level(result)  # pylint:disable=R0204
     return result

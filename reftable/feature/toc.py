@@ -25,7 +25,7 @@ import reftable.feature
 import reftable.toc
 import reftable.toc.run
 import reftable.toc.strategy
-import reftable.toc.toc.create
+import reftable.toc.create
 
 # minimal percentage of toc lines per page
 TOCS_PER_PAGE_MIN = configo.HV_PERCENT_PLUS(default=30, limit=100)
@@ -77,7 +77,7 @@ def work(
     )
 
     flat = utila.flatten(extracted.content)
-    leveled = reftable.toc.toc.create.groupby_level(flat)
+    leveled = reftable.toc.create.groupby_level(flat)
     leveled.__strategy__ = extracted.strategy
     dumped = serializeraw.dump_toc(leveled)
     return dumped

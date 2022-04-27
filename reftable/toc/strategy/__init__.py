@@ -16,7 +16,7 @@ import texmex
 import utila
 
 import reftable.toc
-import reftable.toc.toc.create
+import reftable.toc.create
 
 
 @dataclasses.dataclass
@@ -90,7 +90,7 @@ def group(extracted: reftable.toc.TocLines, strategy: str) -> ExtractionResult:
     for item in right:
         if item not in valid:
             invalid.append(item)
-    content = reftable.toc.toc.create.groupby_chapter(valid)
+    content = reftable.toc.create.groupby_chapter(valid)
     result = ExtractionResult(
         content=content,
         invalid=invalid,
