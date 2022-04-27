@@ -16,10 +16,10 @@ import reftable.abbrev.simple
 
 
 @pytest.mark.parametrize('source, pages, expected', [
-    pytest.param(power.link(power.HOME050_PDF), 6, 18, id='homework50'),
-    pytest.param(power.link(power.MASTER116_PDF), 96, 8, id='master116'),
+    pytest.param(power.HOME050_PDF, 6, 18, id='homework50'),
+    pytest.param(power.MASTER116_PDF, 96, 8, id='master116'),
     pytest.param(
-        power.link(power.BACHELOR037_PDF),
+        power.BACHELOR037_PDF,
         1,
         26,
         id='bachelor37',
@@ -29,6 +29,7 @@ import reftable.abbrev.simple
 @utilatest.longrun
 def test_abbreviation_parse_simple(source, pages, expected):
     utilatest.fixture_requires(source)
+    source = power.link(source)
     content = serializeraw.create_pagetextnavigators_frompath(
         source,
         prefix='oneline',
