@@ -116,8 +116,11 @@ def parse(content: str) -> reftable.toc.TocLines:
             result.append(item)
             # remove already matched content to do not confuse lower
             # strict pattern
-            # TODO: INVESTIGATE TO GHOST PATTERN?
-            content = content.replace(item.raw, '')
+            content = utila.ghost_replace(
+                content,
+                pattern=item.raw,
+                replacement='\12',  # TODO: HOLY VALUE
+            )
     nolevels = parse_nolevel(content)
     result.extend(nolevels)
     # remove duplications, which can occur when table of content is on the
