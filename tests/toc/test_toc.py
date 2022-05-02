@@ -16,6 +16,7 @@ import utilatest
 import reftable.feature.toc
 import reftable.pageselector
 import reftable.toc.create
+import reftable.toc.strategy
 
 
 @utilatest.requires(power.DOCU007_PDF)

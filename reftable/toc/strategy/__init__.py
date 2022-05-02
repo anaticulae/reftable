@@ -64,7 +64,7 @@ class ExtractorStrategy(abc.ABC):
     def finalize_result(self, content):  # pylint:disable=R0201
         valids = remove_nonconnected_tocs(content)
         invalid_content = [item for item in content if item not in valids]
-        extracted = reftable.toc.strategy.group(
+        extracted = group(
             valids,
             strategy=self.__class__.__name__,
         )
@@ -72,7 +72,7 @@ class ExtractorStrategy(abc.ABC):
         if too_many_dots_in_title(utila.flatten(content)):
             utila.debug(f'too many dots in title: {self.__class__.__name__}')
             content = []
-        result = reftable.toc.strategy.ExtractionResult(
+        result = ExtractionResult(
             content=content,
             invalid=invalid_content,
             strategy=self.__class__.__name__,

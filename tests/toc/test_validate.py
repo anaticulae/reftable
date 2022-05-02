@@ -20,6 +20,7 @@ import utilatest
 
 import reftable
 import reftable.toc.run
+import reftable.toc.strategy
 import tests
 
 ARCHIVE = os.path.join(reftable.ROOT, 'tests/toc/expected')

@@ -17,9 +17,9 @@ import serializeraw
 import utila
 
 import reftable.pageselector
+import reftable.toc.create
 import reftable.toc.run
 import reftable.toc.strategy
-import reftable.toc.create
 
 # minimal percentage of tabletable lines per page
 TOFS_PER_PAGE_MIN = configo.HV_PERCENT_PLUS(default=20, limit=100)
@@ -47,8 +47,8 @@ def work(
     navigators = serializeraw.create_pagetextcontentnavigators_fromfile(
         text,
         textpositions,
-        sizeandborderpath=sizeandborder,
-        headerfooterpath=headerfooter,
+        sizeandborder=sizeandborder,
+        headerfooter=headerfooter,
         pages=pages,
     )
     selected = reftable.pageselector.select_contentpages(

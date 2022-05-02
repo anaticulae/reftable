@@ -23,9 +23,9 @@ import utila
 
 import reftable.feature
 import reftable.toc
+import reftable.toc.create
 import reftable.toc.run
 import reftable.toc.strategy
-import reftable.toc.create
 
 # minimal percentage of toc lines per page
 TOCS_PER_PAGE_MIN = configo.HV_PERCENT_PLUS(default=30, limit=100)
@@ -56,11 +56,11 @@ def work(
         dump of extracted table of content
     """
     pages = POSSIBLE_PAGES if pages is None else pages
-    navigators = serializeraw.create_pagetextcontentnavigators_fromfile(
+    navigators = serializeraw.ptcn_fromfile(
         text,
         textpositions,
-        sizeandborderpath=sizeandborder,
-        headerfooterpath=headerfooter,
+        sizeandborder=sizeandborder,
+        headerfooter=headerfooter,
         pages=pages,
     )
     selected = reftable.pageselector.select_contentpages(

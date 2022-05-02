@@ -11,8 +11,8 @@ import configo
 import texmex
 import utila
 
-import reftable.toc.strategy.regex
 import reftable.toc.create
+import reftable.toc.strategy.regex
 
 HEADLINE_SIZE_MIN = configo.HV_FLOAT_PLUS(default=15.0)
 

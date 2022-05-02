@@ -26,8 +26,8 @@ def run(
     oneline = serializeraw.create_pagetextcontentnavigators_fromfile(
         oneline_text,
         oneline_textpositions,
-        sizeandborderpath=sizeandborder,
-        headerfooterpath=headerfooter,
+        sizeandborder=sizeandborder,
+        headerfooter=headerfooter,
         pages=pages,
     )
     result = reftable.figure.normal.run(oneline)
@@ -35,8 +35,8 @@ def run(
         ptcns = serializeraw.create_pagetextcontentnavigators_fromfile(
             text,
             textpositions,
-            sizeandborderpath=sizeandborder,
-            headerfooterpath=headerfooter,
+            sizeandborder=sizeandborder,
+            headerfooter=headerfooter,
             pages=pages,
         )
         result = reftable.figure.column.run(ptcns)

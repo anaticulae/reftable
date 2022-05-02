@@ -10,7 +10,6 @@
 import utila
 
 import reftable.toc
-import reftable.toc.create
 
 CONTENT = """
 5.1.5 Präsentationsschicht . . . . . . . . . . . . . . . . . . . 58
