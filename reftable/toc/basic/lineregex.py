@@ -103,7 +103,8 @@ WHITESPACES_OPT = r'[ ]{0,3}'
 DOTTED = r'([ \.…]+)'
 # TODO: ENSURE TO NOT CUTTING CONTENT WHICH ENDS: "BASS.10 => BASS PAGE: 10"
 PAGE = r"""
-    \b(?P<raw_page>
+    \b
+    (?P<raw_page>
         ((S|P)\.[ ]{0,3})?      # optional S. or P.
         (?P<page>
             (
@@ -111,7 +112,8 @@ PAGE = r"""
                 [IiVvXx]{1,6}           # roman
             )
         )
-    )\b
+    )
+    \b
 """
 
 FLAGS = re.VERBOSE | re.MULTILINE | re.UNICODE | re.IGNORECASE
