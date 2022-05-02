@@ -169,11 +169,10 @@ def dictpattern() -> str:
     return result
 
 
-# TODO: CHECK LONG RUNTIME?
 DICTIONARY = utila.compiles(
     '^'
     f'(?P<text>({dictpattern()}))'
-    r'([ \.]{0,})'
+    r'([ \.]{0,128})'
     f'{PAGE}',)
 
 
