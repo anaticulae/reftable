@@ -63,18 +63,30 @@ def work(
         headerfooter=headerfooter,
         pages=pages,
     )
+    extracted = run(navigators)
+    dumped = dump(extracted)
+    return dumped
+
+
+def run(navigators):
     selected = reftable.pageselector.select_contentpages(
         textnavigators=navigators,
         wrong_table=NO_TOC,
         skip_higherqual_level_three=False,
         valid_lines_perpage_min=TOCS_PER_PAGE_MIN,
     )
-    navigators = utila.select_pages(navigators, pages=selected)
+    navigators = utila.select_pages(
+        navigators,
+        pages=selected,
+    )
     extracted = reftable.toc.run.extract(
         navigators,
         min_detection_count=TOC_COUNT_MIN,
     )
+    return extracted
 
+
+def dump(extracted):
     flat = utila.flatten(extracted.content)
     leveled = reftable.toc.create.groupby_level(flat)
     leveled.__strategy__ = extracted.strategy
