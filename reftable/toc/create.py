@@ -205,7 +205,7 @@ def grouper_level(
             page=line.page,
             title=line.title,
             raw=line.raw,
-            raw_location=line.raw_location,
+            raw_location=line.pdfpage,
             raw_level=line.level,
         )
         outlines.append(section)

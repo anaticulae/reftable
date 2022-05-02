@@ -118,11 +118,11 @@ def remove_nonconnected_tocs(items) -> list:
     """
     if not items:
         return []
-    pagenumbers = [item.raw_location for item in items]
+    pagenumbers = [item.pdfpage for item in items]
     pagenumbers = utila.groupby_diff(pagenumbers, sort=True, enlarge=True)
     valid_pages = utila.longest(pagenumbers, number=1)
     # remove non included items
-    include = [item for item in items if item.raw_location in valid_pages]
+    include = [item for item in items if item.pdfpage in valid_pages]
     return include
 
 

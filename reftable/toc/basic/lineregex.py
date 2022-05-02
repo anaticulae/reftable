@@ -202,7 +202,7 @@ def extract_match(match: re.Match) -> reftable.toc.TocLine:
         page=page,
         raw=utila.extract_match(match),
         raw_level=level,
-        raw_location=raw_location,
+        pdfpage=raw_location,
     )
     return result
 

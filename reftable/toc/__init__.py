@@ -19,7 +19,7 @@ class TocLine:
     title: str = None
     page: str = None
     raw: str = dataclasses.field(default=None, compare=False)
-    raw_location: str = dataclasses.field(default=None, compare=False)
+    pdfpage: int = dataclasses.field(default=None, compare=False)
     raw_level: str = dataclasses.field(default=None, compare=False)
 
 

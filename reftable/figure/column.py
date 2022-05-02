@@ -47,7 +47,7 @@ def parse(ptcn) -> reftable.toc.TocLines:
         item = reftable.toc.TocLine(
             level=level,
             title=title,
-            raw_location=ptcn.page,
+            pdfpage=ptcn.page,
         )
         result.append(item)
     return result

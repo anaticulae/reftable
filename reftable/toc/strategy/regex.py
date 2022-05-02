@@ -68,7 +68,7 @@ def parse_page(page: iamraw.Page) -> reftable.toc.TocLines:
     result = parse(text)
     # setup parse page location
     for item in result:
-        item.raw_location = page.page
+        item.pdfpage = page.page
     return result
 
 

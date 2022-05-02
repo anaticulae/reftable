@@ -52,7 +52,7 @@ def set_pagelocation(
 ) -> reftable.toc.TocLines:
     # set parse page location
     for item in items:
-        item.raw_location = page
+        item.pdfpage = page
     return items
 
 
