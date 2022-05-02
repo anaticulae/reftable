@@ -35,11 +35,8 @@ def run(oneline) -> list:
             headlines=elements.FIGURETABLE,
         ) for page in oneline
     ]
-    loaded = reftable.toc.strategy.ExtractionData(content=oneline)
-    extracted = reftable.toc.run.extract(loaded)
-
+    extracted = reftable.toc.run.extract(oneline)
     flat = utila.flatten(extracted.content)
-
     flat = remove_figure_sequence(flat)
     return flat
 

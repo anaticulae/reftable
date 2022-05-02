@@ -7,6 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import texmex
 import utila
 
 import reftable.toc.decider
@@ -19,7 +20,7 @@ import reftable.toc.strategy.regex
 
 
 def extract(
-    data: reftable.toc.strategy.ExtractionData,
+    data: texmex.NavigatorMixins,
     active: list = None,
     min_detection_count: int = 1,
 ) -> reftable.toc.strategy.ExtractionResult:

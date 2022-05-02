@@ -63,9 +63,8 @@ def work(
     if not headline_start(navigators[0]):
         utila.error(f'no valid table headline start: {selected}')
         return EMPTY
-    loaded = reftable.toc.strategy.ExtractionData(content=navigators)
     # run
-    extracted = reftable.toc.run.extract(loaded)
+    extracted = reftable.toc.run.extract(navigators)
     # prepare
     flat = utila.flatten(extracted.content)
     leveled = reftable.toc.create.groupby_level(flat)

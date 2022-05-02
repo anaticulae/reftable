@@ -44,17 +44,12 @@ class ExtractionResult:
         return result
 
 
-@dataclasses.dataclass
-class ExtractionData:
-    content: texmex.PageTextContentNavigators = None
-
-
 ExtractionResults = typing.List[ExtractionResult]
 
 
 class ExtractorStrategy(abc.ABC):
 
-    def __init__(self, loaded: ExtractionData):
+    def __init__(self, loaded: texmex.NavigatorMixins):
         self.loaded = loaded
 
     @abc.abstractmethod

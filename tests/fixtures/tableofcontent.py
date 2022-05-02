@@ -11,8 +11,6 @@ import power
 import serializeraw
 import utilatest
 
-import reftable.toc.strategy
-
 
 def headlines_frompath(path: str, pages=None):
     loaded = serializeraw.create_pagetextcontentnavigators_frompath(
@@ -21,8 +19,7 @@ def headlines_frompath(path: str, pages=None):
         prefix='oneline',
         validate_leftright=False,  # do not check writing text over border
     )
-    result = reftable.toc.strategy.ExtractionData(content=loaded)
-    return result
+    return loaded
 
 
 def master72_toc():

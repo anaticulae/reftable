@@ -43,11 +43,11 @@ TOC_LINE_LENGTH_MIN = configo.HV_INT_PLUS(default=9)
 class RegexTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
-        content = self.loaded.content
+        content = self.loaded
         if content:
             # TODO: RUN THIS FOR OTHER PAGES THAN THE FIRST ONE?
             content[0] = reftable.toc.strategy.remove_headline(content[0])
-        parsed = [parse_page(page) for page in self.loaded.content]
+        parsed = [parse_page(page) for page in self.loaded]
         flat = utila.flatten(parsed)
         grouped = reftable.toc.strategy.group(
             flat,

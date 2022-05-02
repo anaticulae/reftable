@@ -70,9 +70,8 @@ def work(
         valid_lines_perpage_min=TOCS_PER_PAGE_MIN,
     )
     navigators = utila.select_pages(navigators, pages=selected)
-    loaded = reftable.toc.strategy.ExtractionData(content=navigators)
     extracted = reftable.toc.run.extract(
-        loaded,
+        navigators,
         min_detection_count=TOC_COUNT_MIN,
     )
 

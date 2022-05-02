@@ -172,8 +172,7 @@ def tocstyle_frompath(source, pages):
         prefix='oneline',
         pages=pages,
     )
-    loaded = reftable.toc.strategy.ExtractionData(content=ptcn)
-    extracted = reftable.toc.run.extract(loaded)
+    extracted = reftable.toc.run.extract(ptcn)
     extracted = utila.flatten(extracted)
     current = elements.toc_style(extracted)
     return current

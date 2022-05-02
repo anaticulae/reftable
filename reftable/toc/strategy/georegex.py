@@ -36,7 +36,7 @@ GROUP_GAP_MIN = configo.HV_FLOAT_PLUS(default=30.0)
 class GeometryRegexTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
-        extracted = [analyse_page(item) for item in self.loaded.content]
+        extracted = [analyse_page(item) for item in self.loaded]
         flat = utila.flatten(utila.flatten(extracted))
         result = self.finalize_result(flat)
         return result

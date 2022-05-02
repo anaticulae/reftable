@@ -17,7 +17,7 @@ import reftable.toc.basic.lineregex
 class BalanceTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
-        extracted = [analyse_page(item) for item in self.loaded.content]
+        extracted = [analyse_page(item) for item in self.loaded]
         flat = utila.flatten(extracted)
         result = self.finalize_result(flat)
         return result

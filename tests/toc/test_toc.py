@@ -28,11 +28,8 @@ def test_toc_groupby_level():
     selected = reftable.pageselector.select_contentpages(navigators)
     # select toc pages only
     navigators = [item for item in navigators if item.page in selected]
-    loaded = reftable.toc.strategy.ExtractionData(content=navigators)
-    tableofcontent = reftable.toc.run.extract(loaded)
-
+    tableofcontent = reftable.toc.run.extract(navigators)
     tableofcontent = utila.flatten(tableofcontent.content)
-
     result = reftable.toc.create.groupby_level_numbered(tableofcontent)
     assert result
     dumped = serializeraw.dump_toc(result)
@@ -94,9 +91,8 @@ def test_extract_toc_from_path(resources, pages, expected):
         prefix='oneline',
         pages=pages,
     )
-    loaded = reftable.toc.strategy.ExtractionData(content=navigators)
     extracted = reftable.toc.run.extract(
-        loaded,
+        navigators,
         min_detection_count=reftable.feature.toc.TOC_COUNT_MIN,
     )
     flat = utila.flatten(extracted)

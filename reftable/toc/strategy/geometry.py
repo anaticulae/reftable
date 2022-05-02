@@ -26,7 +26,7 @@ class GeometryTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
         extracted = []
-        for page in self.loaded.content:
+        for page in self.loaded:
             analyzed = analyse_page(page, level_feeds=self.textfeed)
             analyzed = remove_pagenumber_headline(analyzed)
             extracted.extend(analyzed)
@@ -43,7 +43,7 @@ class GeometryTocExtractor(reftable.toc.strategy.ExtractorStrategy):
     @functools.cached_property
     def textfeed(self):
         feeds = texmex.document_textfeed(
-            self.loaded.content,
+            self.loaded,
             count=HEADLINE_LEVEL_MAX.value,
         )
         feed = sorted(feeds)
