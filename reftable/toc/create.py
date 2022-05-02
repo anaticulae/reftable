@@ -178,7 +178,7 @@ def grouper_level(
     levelme=None,
     style: iamraw.TocStyle = None,
 ) -> iamraw.Toc:
-    """Create `iamraw.Toc` out of list of `reftable.toc.TocLine
+    """Create `iamraw.Toc` out of list of `reftable.toc.TocLine`
 
     Determine level of toc line and replace it with determined int-level.
 
