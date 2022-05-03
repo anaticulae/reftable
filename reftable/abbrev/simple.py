@@ -40,7 +40,10 @@ def parse_page(content):
             utila.info(f'skip: {short}, {description}')
             continue
         short, description = short.strip(), description.strip()
-        parsed = iamraw.Abbreviation(short=short, description=description)
+        parsed = iamraw.Abbreviation(
+            short=short,
+            description=description,
+        )
         utila.debug(f'parsed: {parsed}')
         result.append(parsed)
     return result

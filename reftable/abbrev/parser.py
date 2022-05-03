@@ -22,9 +22,7 @@ STRATEGIES = [
 def parse(data: reftable.abbrev.AbbreviationData) -> iamraw.AbbreviationResult:
     assert isinstance(data.normal, list), type(data)
     assert isinstance(data.oneline, list), type(data)
-
     parsed = [strategy(data).result() for strategy in STRATEGIES]
-
     judged = judge(parsed)
     return judged
 
@@ -32,7 +30,6 @@ def parse(data: reftable.abbrev.AbbreviationData) -> iamraw.AbbreviationResult:
 def judge(results) -> iamraw.AbbreviationResult:
     simple = results[0]
     geometry = results[1]
-
     more_than_double_parsed = (len(geometry) * 2) < len(simple)
     if more_than_double_parsed:
         return simple
