@@ -11,6 +11,14 @@ Progress
   releases/backlog
   CHANGELOG
 
+Technique
+---------
+
+.. toctree::
+   :maxdepth: 4
+
+   technique/index
+
 Modules
 -------
 
