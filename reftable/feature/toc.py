@@ -22,6 +22,7 @@ import serializeraw
 import utila
 
 import reftable.feature
+import reftable.pageselector
 import reftable.toc
 import reftable.toc.create
 import reftable.toc.run
