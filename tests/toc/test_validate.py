@@ -67,6 +67,7 @@ TEN = utila.make_tuple(10)
     utilatest.step(power.MASTER112_PDF, (5, 6)),
     utilatest.step(power.MASTER155_PDF, (1, 2)),
     utilatest.step(power.MASTER193_PDF, (3, 4, 5)),
+    utilatest.step(power.PAPER14B_PDF, (1,)),
 ])
 @utilatest.nightly
 def test_toc_validate(source, pages, monkeypatch, testdir):
@@ -139,6 +140,7 @@ class Evaluate(utilatest.BaseLiner):
     utilatest.step(power.MASTER127_PDF, TEN),
     utilatest.step(power.MASTER155_PDF, (1, 2)),
     utilatest.step(power.MASTER193_PDF, (2, 3, 4)),
+    utilatest.step(power.PAPER14B_PDF, (1,)),
 ])
 @utilatest.longrun
 def test_toc_style_numbered(source, pages):
