@@ -7,15 +7,15 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-utilatest==0.12.4
+utilatest==0.13.0
 
 # reference to test data
 power==2.7.0
-hardcore==0.5.1
-genex==0.26.0
+hardcore==0.5.2
+genex==0.28.0
 
 # ensure that test data is generated with the right version of rawmaker
-rawmaker==2.37.0
+rawmaker==2.37.1
 
 tablero==0.9.3
-groupme==0.29.1
+groupme==0.31.0
