@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.2.2
+
+### Documentation
+
+* move from groupme (513d028b387c)
+
 ## v0.2.1
 
 ### Feature
