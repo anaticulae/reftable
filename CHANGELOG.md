@@ -2,6 +2,12 @@
 
 Every noteable change is logged here.
 
+## v0.2.3
+
+### Feature
+
+* store pdf page (a48ec1e89365)
+
 ## v0.2.2
 
 ### Documentation
