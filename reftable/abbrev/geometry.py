@@ -48,6 +48,7 @@ class GeometryAbbreviationParser(reftable.abbrev.AbbreviationExtractorStrategy):
                 continue
             for item in parsed:
                 ready.append(item)
+            ready.pdfpages.append(page.page)
         return ready
 
 

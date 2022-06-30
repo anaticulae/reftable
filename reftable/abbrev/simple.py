@@ -22,6 +22,8 @@ class SimpleAbbreviationParser(reftable.abbrev.AbbreviationExtractorStrategy):
             parsed = parse_page(page)
             for item in parsed:
                 ready.append(item)
+            if parsed:
+                ready.pdfpages.append(page.page)
         return ready
 
 
