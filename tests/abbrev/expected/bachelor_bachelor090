@@ -1,0 +1,42 @@
+ACK             - Acknowledge
+AUTOSAR         - AUTomotive Open System ARchitecture
+BSW             - Basic Software
+CAN             - Controller Area Network
+CBM             - Condition Based Maintenance
+CPU             - central processing unit
+CRC             - Cyclic redundancy check
+DLC             - Data Length Code
+DRY             - Dont repeat yourself
+EA              - Enterprise Architect
+ECU             - Electronic control unit
+EMF             - Eclipse Modelling Framework
+EOF             - End of Frame
+GPS             - Global Positioning System
+GSM             - Global System for Mobile Communications
+HiL             - Hardware in the Loop
+HMI             - Human–Machine Interface
+ID              - Identifier
+IDE             - Identifier Extension
+IFS             - Interframe Space
+IO              - Input/Output
+LAN             - Local Area Network
+MBD             - Model based development
+MDSD            - Model-Driven Software Development
+MISRA           - Motor Industry Software Reliability Association
+MiL             - Model in the Loop
+NRZ             - Non-return-to-zero
+OBU             - Onbord Unit
+OSI             - Open Systems Interconnection Reference Model
+PDM             - Produktdatenmanagement
+QT              - Cute
+RAM             - Random-Access-Memory
+ROM             - Read-only memory
+RTE             - Run-Time-Environment
+RTR             - Remote-Transmission-Request
+SCM             - Software configuration management
+SFTP            - Secure File Transfer Protocol
+SOF             - Start of Frame
+SiL             - Software in the Loop
+STM33           - Software Transactional Memory
+UML             - Unified Modeling Language
+XML             - Extensible Markup Language

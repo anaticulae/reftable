@@ -24,6 +24,7 @@ ARCHIVE = utila.join(reftable.ROOT, 'tests/abbrev/expected', exist=True)
 
 @pytest.mark.parametrize('source, pages', [
     pytest.param(power.TECH019_PDF, 4, id='techo019'),
+    pytest.param(power.BACHELOR090_PDF, (10, 11), id='bachelor090'),
 ])
 def test_validate_abbrev(source, pages, testdir, monkeypatch):
     pages = utila.ensure_tuple(pages)
