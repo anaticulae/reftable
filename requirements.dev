@@ -19,3 +19,5 @@ rawmaker==2.37.2
 
 tablero==0.9.4
 groupme==0.34.3
+# REMOVE LATER
+sections>=1.21.2<2.0.0
