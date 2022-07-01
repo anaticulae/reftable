@@ -25,11 +25,16 @@ def test_abbreviation_work():
     oneline_text = iamraw.path.text(source, prefix='oneline')
     oneline_textposition = iamraw.path.textposition(source, prefix='oneline')
 
+    headerfooter = iamraw.path.headerfooters(source)
+    sizeandborder = iamraw.path.sizeandborder(source)
+
     dumped = reftable.feature.abbrev.work(
         text,
         textposition,
         oneline_text,
         oneline_textposition,
+        headerfooter,
+        sizeandborder,
         pages=(1,),
     )
 

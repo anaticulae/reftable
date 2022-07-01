@@ -21,6 +21,8 @@ WORKPLAN = [
             utila.ResultFile(producer='rawmaker', name='text_positions'),
             utila.ResultFile(producer='rawmaker', name='oneline_text_text'),
             utila.ResultFile('rawmaker', name='oneline_text_positions'),
+            utila.ResultFile(producer='groupme', name='footer_footerheader'),
+            utila.ResultFile(producer='rawmaker', name='border_pages'),
         ],
         output=('abbrev',),
     ),

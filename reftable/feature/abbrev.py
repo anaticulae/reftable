@@ -18,6 +18,8 @@ def work(
     textposition: str,
     text_oneline: str,
     textposition_oneline: str,
+    headerfooter: str,
+    sizeandborder: str,
     pages: tuple = None,
 ) -> str:
     data = load_data(
@@ -25,6 +27,8 @@ def work(
         textposition,
         text_oneline,
         textposition_oneline,
+        headerfooter,
+        sizeandborder,
         pages,
     )
     parsed = reftable.abbrev.parser.parse(data)
@@ -38,17 +42,26 @@ def load_data(
     textposition: str,
     text_oneline: str,
     textposition_oneline: str,
+    headerfooter: str,
+    sizeandborder: str,
     pages: tuple = None,
 ) -> reftable.abbrev.AbbreviationData:
-    normal = serializeraw.ptn_fromfile(
+    normal = serializeraw.ptcn_fromfile(
         text=text,
         textpositions=textposition,
+        sizeandborder=sizeandborder,
+        headerfooter=headerfooter,
         pages=pages,
     )
-    oneline = serializeraw.ptn_fromfile(
+    oneline = serializeraw.ptcn_fromfile(
         text=text_oneline,
         textpositions=textposition_oneline,
+        sizeandborder=sizeandborder,
+        headerfooter=headerfooter,
         pages=pages,
     )
-    data = reftable.abbrev.AbbreviationData(normal=normal, oneline=oneline)
+    data = reftable.abbrev.AbbreviationData(
+        normal=normal,
+        oneline=oneline,
+    )
     return data
