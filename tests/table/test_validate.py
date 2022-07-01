@@ -19,11 +19,7 @@ import utilatest
 import reftable
 import tests
 
-ARCHIVE = utila.join(
-    reftable.ROOT,
-    'tests/table/expected',
-    assert_exists=True,
-)
+ARCHIVE = utila.join(reftable.ROOT, 'tests/table/expected', exist=True)
 
 
 #  TODO: IMPROVE PARSER A.10 and A.11 is not fully correct

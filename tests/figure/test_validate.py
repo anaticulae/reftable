@@ -19,11 +19,7 @@ import utilatest
 import reftable
 import tests
 
-ARCHIVE = utila.join(
-    reftable.ROOT,
-    'tests/figure/expected',
-    assert_exists=True,
-)
+ARCHIVE = utila.join(reftable.ROOT, 'tests/figure/expected', exist=True)
 
 
 @pytest.mark.parametrize('source, pages', [

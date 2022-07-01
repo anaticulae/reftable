@@ -8,7 +8,6 @@
 # =============================================================================
 
 import functools
-import os
 
 import elements
 import iamraw
@@ -23,7 +22,7 @@ import reftable.toc.run
 import reftable.toc.strategy
 import tests
 
-ARCHIVE = os.path.join(reftable.ROOT, 'tests/toc/expected')
+ARCHIVE = utila.join(reftable.ROOT, 'tests/toc/expected', exist=True)
 TEN = utila.make_tuple(10)
 
 
