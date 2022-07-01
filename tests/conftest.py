@@ -86,5 +86,6 @@ def extract(resources):
     genex.extract(
         resources,
         groupme='--pagenumbers --footer',
+        sections=True,
         worker=WORKER,
     )
