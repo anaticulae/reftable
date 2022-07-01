@@ -22,12 +22,14 @@ import tests
 ARCHIVE = utila.join(reftable.ROOT, 'tests/abbrev/expected', exist=True)
 
 
-@pytest.mark.parametrize('source, pages', [
-    pytest.param(power.TECH019_PDF, 4, id='techo019'),
-    pytest.param(power.BACHELOR090_PDF, (10, 11), id='bachelor090'),
+@pytest.mark.parametrize('source', [
+    pytest.param(power.TECH019_PDF, id='techo019'),
+    pytest.param(power.BACHELOR090_PDF, id='bachelor090'),
 ])
-def test_validate_abbrev(source, pages, testdir, monkeypatch):
-    pages = utila.ensure_tuple(pages)
+def test_validate_abbrev(source, testdir, monkeypatch):
+    pages = select_abbrev(source)
+    if not pages:
+        raise ValueError('no abbrev table found')
     Evaluate(
         source=source,
         pages=utila.from_tuple(pages, separator=','),
@@ -62,3 +64,19 @@ class Evaluate(utilatest.BaseLiner):
             collected.append(line)
         raw = utila.NEWLINE.join(collected)
         return raw
+
+
+def select_abbrev(source: str) -> tuple:
+    # TODO: REPLACE WITH UTILA TEST CODE
+    generated = power.link(source)
+    sections = serializeraw.load_sections(generated)
+    flat = utila.flatten_content(sections)
+    pages = []
+    for item in flat:
+        if not isinstance(item, iamraw.sections.AbbreviationTable):
+            continue
+        pages.append(item.start)
+    if not pages:
+        return None
+    result = tuple(pages)
+    return result
