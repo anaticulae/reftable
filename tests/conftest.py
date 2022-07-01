@@ -66,8 +66,8 @@ RESOURCES = [
     (power.MASTER155_PDF, '0:10'),
     (power.MASTER193_PDF, '3,4,5'),
     (power.PAPER14B_PDF, '1'),
-    (power.TECH019_PDF, '4'),
     (power.TECH024_PDF, '0:5'),
+    power.TECH019_PDF,
     genex.todo(
         power.DOCU007_PDF,
         groupme='--pagenumbers --footer --content',
