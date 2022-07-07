@@ -2,6 +2,16 @@
 
 Every noteable change is logged here.
 
+## v0.3.0
+
+### Feature
+
+* ignore footer and header (108380d2c257)
+
+### Fix
+
+* skip minus as a result of layout parsing (7b3f67cf01a6)
+
 ## v0.2.3
 
 ### Feature
