@@ -19,14 +19,14 @@ import tests
 @pytest.mark.parametrize('source, expected, pages', [
     pytest.param(power.BACHELOR076_PDF, 42, 2, id='bachelor76'),
 ])
-def test_abbreviation_validate(source, expected, pages, monkeypatch, testdir):
+def test_abbreviation_validate(source, expected, pages, mp, td):
     source = power.link(source)
     pages = (pages,) if isinstance(pages, int) else pages
     pages: str = utila.from_tuple(pages, separator=',') if pages else ':'
     cmd = f'-i {source} --abbrev --pages={pages}'
-    tests.run(cmd, monkeypatch=monkeypatch)
+    tests.run(cmd, mp=mp)
 
-    toc = reftable.path.abbreviation(testdir.tmpdir)
+    toc = reftable.path.abbreviation(td.tmpdir)
     toc = serializeraw.load_abbreviation_table(toc)
 
     assert len(toc) == expected

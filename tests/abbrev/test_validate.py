@@ -26,23 +26,23 @@ ARCHIVE = utila.join(reftable.ROOT, 'tests/abbrev/expected', exist=True)
     pytest.param(power.TECH019_PDF, id='techo019'),
     pytest.param(power.BACHELOR090_PDF, id='bachelor090'),
 ])
-def test_validate_abbrev(source, testdir, monkeypatch):
+def test_validate_abbrev(source, td, mp):
     pages = select_abbrev(source)
     if not pages:
         raise ValueError('no abbrev table found')
     Evaluate(
         source=source,
         pages=utila.from_tuple(pages, separator=','),
-        workdir=testdir.tmpdir,
-        monkeypatch=monkeypatch,
+        workdir=td.tmpdir,
+        mp=mp,
     ).evaluate()
 
 
 class Evaluate(utilatest.BaseLiner):
 
-    def __init__(self, source, pages, workdir, monkeypatch):
+    def __init__(self, source, pages, workdir, mp):
         super().__init__(
-            program=functools.partial(tests.run, monkeypatch=monkeypatch),
+            program=functools.partial(tests.run, mp=mp),
             step='abbrev',
             pages=pages,
             source=power.link(source),

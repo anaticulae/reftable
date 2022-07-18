@@ -16,14 +16,14 @@ import tests
 
 
 @utilatest.requires(power.DISS157_PDF)
-def test_appendix_level(testdir, monkeypatch):
+def test_appendix_level(td, mp):
     """Before this test, all appendix level where set to level 4."""
     source = power.link(power.DISS157_PDF)
     tests.run(
-        f'--toc -i {source} -o {testdir.tmpdir}',
-        monkeypatch=monkeypatch,
+        f'--toc -i {source} -o {td.tmpdir}',
+        mp=mp,
     )
-    path = reftable.path.toc(testdir.tmpdir)
+    path = reftable.path.toc(td.tmpdir)
     loaded = serializeraw.load_toc(path)
     appendix = loaded.children[-2].children
     assert len(appendix) == 3

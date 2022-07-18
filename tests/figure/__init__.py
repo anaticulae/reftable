@@ -13,11 +13,11 @@ import reftable
 import tests
 
 
-def extract_table(source, pages, monkeypatch, testdir):
+def extract_table(source, pages, mp, td):
     pages = ','.join((str(item) for item in pages)) if pages else ''
     pages = f'--pages={pages}' if pages else ''
     cmd = f'-i {source} --table {pages}'
-    tests.run(cmd, monkeypatch=monkeypatch)
-    path = reftable.path.table(testdir.tmpdir)
+    tests.run(cmd, mp=mp)
+    path = reftable.path.table(td.tmpdir)
     table = serializeraw.load_toc(path)
     return table

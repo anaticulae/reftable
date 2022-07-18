@@ -69,21 +69,21 @@ TEN = utila.make_tuple(10)
     utilatest.step(power.PAPER14B_PDF, (1,)),
 ])
 @utilatest.nightly
-def test_toc_validate(source, pages, monkeypatch, testdir):
+def test_toc_validate(source, pages, mp, td):
     """Verify parsing behavior and check that toc is located
     automatically in range of `TEN` pages."""
     utilatest.fixture_requires(source)
     pages = utila.from_tuple(pages, ',') if pages else ':'
-    Evaluate(source, pages, testdir.tmpdir, monkeypatch).evaluate()
+    Evaluate(source, pages, td.tmpdir, mp).evaluate()
 
 
 class Evaluate(utilatest.BaseLiner):
 
-    def __init__(self, source, pages, workdir, monkeypatch):
+    def __init__(self, source, pages, workdir, mp):
         super().__init__(
             program=functools.partial(
                 tests.run,
-                monkeypatch=monkeypatch,
+                mp=mp,
             ),
             step='toc',
             source=source,

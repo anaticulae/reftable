@@ -50,21 +50,21 @@ ARCHIVE = utila.join(reftable.ROOT, 'tests/figure/expected', exist=True)
     ),
 ])
 @utilatest.nightly
-def test_table_validate(source, pages, testdir, monkeypatch):
+def test_table_validate(source, pages, td, mp):
     Evaluate(
         source=source,
         pages=utila.from_tuple(pages, separator=','),
         expected=utila.file_name(source),
-        workdir=testdir.tmpdir,
-        monkeypatch=monkeypatch,
+        workdir=td.tmpdir,
+        mp=mp,
     ).evaluate()
 
 
 class Evaluate(utilatest.BaseLiner):
 
-    def __init__(self, source, pages, expected, workdir, monkeypatch):
+    def __init__(self, source, pages, expected, workdir, mp):
         super().__init__(
-            program=functools.partial(tests.run, monkeypatch=monkeypatch),
+            program=functools.partial(tests.run, mp=mp),
             step='figure',
             pages=pages,
             source=power.link(source),

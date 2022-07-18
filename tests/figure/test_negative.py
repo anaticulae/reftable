@@ -27,12 +27,12 @@ import tests.table
     ),
 ])
 @utilatest.nightly
-def test_regression_non_valid_examples(source, pages, monkeypatch, testdir):
+def test_regression_non_valid_examples(source, pages, mp, td):
     source = power.link(source)
     extracted = tests.figure.extract_table(
         source,
         pages,
-        monkeypatch,
-        testdir,
+        mp,
+        td,
     )
     assert not extracted
