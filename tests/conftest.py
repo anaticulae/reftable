@@ -72,7 +72,7 @@ RESOURCES = [
     power.TECH019_PDF,
     genex.todo(
         power.DOCU007_PDF,
-        groupme='--pagenumbers --footer --content',
+        groupme='--footer --content',
         tablero=True,
     ),
 ]
@@ -87,7 +87,9 @@ def pytest_sessionstart(session):  # pylint:disable=W0613
 def extract(resources):
     genex.extract(
         resources,
-        groupme='--pagenumbers --footer',
+        cleanup=True,
+        groupme='--footer',
+        pagenumber=True,
         sections=True,
         worker=WORKER,
     )
