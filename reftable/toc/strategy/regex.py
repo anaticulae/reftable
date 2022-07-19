@@ -100,19 +100,20 @@ def parse(content: str) -> reftable.toc.TocLines:
     """
     duplicated = content
     result = []
-    for pattern in [
+    for number, pattern in enumerate([
             reftable.toc.basic.lineregex.EXTENDED_PATTERN,
             reftable.toc.basic.lineregex.EXTENDED_PATTERN_LETTER,
             reftable.toc.basic.lineregex.DICTIONARY,
             reftable.toc.basic.lineregex.NO_LEVEL,
             reftable.toc.basic.lineregex.NO_DOTS,
-    ]:
+    ]):
         for line in re.finditer(pattern, content):
             item = reftable.toc.basic.lineregex.extract_match(line)
             if len(item.raw) < TOC_LINE_LENGTH_MIN:
                 utila.debug(f'toc line too short: {item.raw}')
                 # TODO: REMOVE HACK LATER
                 continue
+            utila.verbose(f'pattern {number}: {item}\n{line}\n')
             result.append(item)
             # remove already matched content to do not confuse lower
             # strict pattern
