@@ -200,6 +200,11 @@ def grouper_level(
         if not isinstance(line, reftable.toc.TocLine):
             continue
         levels = levelme(line.level)
+        if levels is None:
+            utila.error(line)
+            utila.error(line.level)
+            utila.log('restore old behavior')
+            levels = 1
         section = iamraw.SectionRaw(
             level=levels,
             page=line.page,
