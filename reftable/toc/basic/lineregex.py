@@ -69,7 +69,8 @@ LEVEL_LETTER = r"""
             (A|B|C|D|E|F|G)\.(\d{1,2}\.?)+\d{0,2}|
             (KAPITEL|CHAPTER)[ ]\d{1,2}|
             (SECTION|PART)[ ]{0,3}\d{1,2}:|
-            (ANHANG|APPENDIX)[ ](A|B|C|D)\: # TODO: Exclude Anhang and :
+            (ANHANG|APPENDIX)[ ](A|B|C|D)\:| # TODO: Exclude Anhang and :
+            \(\d{1,2}\)
         )
     )
 """
