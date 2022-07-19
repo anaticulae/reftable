@@ -167,6 +167,7 @@ def test_toc_style_numbered(source, pages):
 
 @pytest.mark.parametrize('source,pages', [
     utilatest.step(power.DISS406_PDF, (3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13)),
+    utilatest.step(power.HOME021_PDF, (0, 1)),
 ])
 @utilatest.longrun
 def test_toc_style_stepped(source, pages):
