@@ -65,7 +65,7 @@ LEVEL_LETTER = r"""
         (
             (A|B|C|D|E|F|G)(\.?|\))|
             (AA|BB|CC|DD|EE|FF|GG)\)|
-            (I|II|III|IV|V|VI|VII|VIII)(\)|\.)|
+            (I|II|III|IV|V|VI|VII|VIII)[\)\.]|
             (A|B|C|D|E|F|G)\.(\d{1,2}\.?)+\d{0,2}|
             (KAPITEL|CHAPTER)[ ]\d{1,2}|
             (SECTION|PART)[ ]{0,3}\d{1,2}:|
