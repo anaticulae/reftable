@@ -63,9 +63,16 @@ LEVEL_DOTTED_OPTIONAL = r'(?P<level>(\d{1,2}\.?){1,3}\d{0,2})'
 LEVEL_LETTER = r"""
     (?P<level>
         (
+            (A|B|C|D|E|F|G)\.(\d{1,2}\.?)+\d{0,2}|
             (A|B|C|D|E|F|G)(\.?|\))|
             (AA|BB|CC|DD|EE|FF|GG)\)|
-            (I|II|III|IV|V|VI|VII|VIII)[\)\.]|
+            (III|II|I|IV|VIIII|VIII|VII|VI|V|IX|XIII|XII|XI|X)
+            (
+                \.\d{0,1} # IV or optional number:  IV.2
+                |
+                \)        # IV)
+            )
+            |
             (A|B|C|D|E|F|G)\.(\d{1,2}\.?)+\d{0,2}|
             (KAPITEL|CHAPTER)[ ]\d{1,2}|
             (SECTION|PART)[ ]{0,3}\d{1,2}:|
