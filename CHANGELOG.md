@@ -2,6 +2,15 @@
 
 Every noteable change is logged here.
 
+## v0.4.0
+
+### Feature
+
+* add another page number pattern (6a0ba7b70e46)
+* move more complex pattern first (53dae7a839f6)
+* extend regex logging (23e0d06bb9df)
+* extend starting pattern (9ff9e7d9f4c3)
+
 ## v0.3.0
 
 ### Feature
