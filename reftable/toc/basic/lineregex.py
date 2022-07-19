@@ -120,7 +120,8 @@ PAGE = r"""
         (?P<page>
             (
                 \d{1,3}|                # arabic
-                [IiVvXx]{1,6}           # roman
+                [IiVvXx]{1,6}|          # roman
+                \d{1,3}\/\d{1,3}        # 6/7
             )
         )
     )
