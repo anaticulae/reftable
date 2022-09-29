@@ -91,8 +91,10 @@ RESOURCES = [
     power.TECH019_PDF,
     genex.todo(
         power.DOCU007_PDF,
-        groupme='--footer --content',
+        groupme='--content',
         tablero=True,
+        footnote=True,
+        pagenumber=True,
     ),
 ]
 
@@ -107,8 +109,8 @@ def extract(resources):
     genex.extract(
         resources,
         cleanup=True,
-        groupme='--footer',
         pagenumber=True,
+        footnote=True,
         sections=True,
         worker=WORKER,
     )
