@@ -19,6 +19,9 @@ rawmaker==2.40.0
 
 tablero==0.10.1
 groupme==0.37.0
+pagenumber==0.2.1
+headnote==0.3.1
+footnote==0.2.2
 # REMOVE LATER
 sections>=1.21.3<2.0.0
 cleanup>=0.7.0<1.0.0

@@ -92,9 +92,11 @@ RESOURCES = [
     genex.todo(
         power.DOCU007_PDF,
         groupme='--content',
-        tablero=True,
+        cleanup=True,
         footnote=True,
+        headnote=True,
         pagenumber=True,
+        tablero=True,
     ),
 ]
 
