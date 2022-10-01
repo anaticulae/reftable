@@ -12,7 +12,7 @@ utilatest==0.20.1
 # reference to test data
 power==2.14.1
 hardcore==0.7.0
-genex==0.35.2
+genex==0.35.5
 
 # ensure that test data is generated with the right version of rawmaker
 rawmaker==2.40.0
