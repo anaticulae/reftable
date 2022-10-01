@@ -2,6 +2,20 @@
 
 Every noteable change is logged here.
 
+## v0.5.0 (2022-10-01)
+
+### Chore
+
+* upgrade requirements.txt (711866c4c420)
+* publish resources if nightly fails (3bc3fddf4f60)
+* add caelum lib (e3c83d6b851d)
+* add separate generator step (004ca6ad4646)
+* add missing dev requirement (3386da6967a1)
+* use modern test data generator (da22a77e644d)
+* increase worker count on CI (16ef9d41e65c)
+* add Jenkinsfile (8521053b746a)
+* upgrade requirements.txt (56009ba8b2cc)
+
 ## v0.4.0
 
 ### Feature
