@@ -11,6 +11,7 @@ import power
 import pytest
 import serializeraw
 import utila
+import utilatest
 
 import reftable
 import tests
@@ -20,6 +21,7 @@ import tests
     pytest.param(power.BACHELOR076_PDF, 42, 2, id='bachelor76'),
 ])
 def test_abbreviation_validate(source, expected, pages, mp, td):
+    utilatest.fixture_requires(source)
     source = power.link(source)
     pages = (pages,) if isinstance(pages, int) else pages
     pages: str = utila.from_tuple(pages, separator=',') if pages else ':'
@@ -28,5 +30,4 @@ def test_abbreviation_validate(source, expected, pages, mp, td):
 
     toc = reftable.path.abbreviation(td.tmpdir)
     toc = serializeraw.load_abbreviation_table(toc)
-
     assert len(toc) == expected

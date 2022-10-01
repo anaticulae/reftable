@@ -27,6 +27,7 @@ ARCHIVE = utila.join(reftable.ROOT, 'tests/abbrev/expected', exist=True)
     pytest.param(power.BACHELOR090_PDF, id='bachelor090'),
 ])
 def test_validate_abbrev(source, td, mp):
+    utilatest.fixture_requires(source)
     pages = select_abbrev(source)
     if not pages:
         raise ValueError('no abbrev table found')

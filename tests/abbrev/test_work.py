@@ -16,6 +16,7 @@ import reftable.feature.abbrev
 
 
 @utilatest.longrun
+@utilatest.requires(power.BACHELOR037_PDF)
 def test_abbreviation_work():
     source = power.link(power.BACHELOR037_PDF)
 
