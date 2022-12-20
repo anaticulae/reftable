@@ -27,8 +27,8 @@ import texmex
 
 @dataclasses.dataclass
 class AbbreviationData:
-    normal: texmex.PageTextNavigators = None
-    oneline: texmex.PageTextNavigators = None
+    normal: texmex.PTNs = None
+    oneline: texmex.PTNs = None
 
 
 class AbbreviationExtractorStrategy(abc.ABC):

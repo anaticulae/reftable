@@ -52,7 +52,7 @@ class GeometryAbbreviationParser(reftable.abbrev.AbbreviationExtractorStrategy):
         return ready
 
 
-def parse_page(page: texmex.PageTextNavigator) -> iamraw.Abbreviations:
+def parse_page(page: texmex.PTN) -> iamraw.Abbreviations:
     parsed = geostrat.dc_parse_page(page)
     if not parsed:
         return None

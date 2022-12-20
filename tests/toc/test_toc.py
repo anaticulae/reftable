@@ -21,7 +21,7 @@ import reftable.toc.strategy
 
 @utilatest.requires(power.DOCU007_PDF)
 def test_toc_groupby_level():
-    navigators = serializeraw.create_pagetextcontentnavigators_frompath(
+    navigators = serializeraw.ptcn_frompath(
         power.link(power.DOCU007_PDF),
         prefix='oneline',
     )
@@ -29,7 +29,7 @@ def test_toc_groupby_level():
     # select toc pages only
     navigators = [item for item in navigators if item.page in selected]
     tableofcontent = reftable.toc.run.extract(navigators)
-    tableofcontent = utila.flatten(tableofcontent.content)
+    tableofcontent = utila.flat(tableofcontent.content)  # pylint:disable=R0204
     result = reftable.toc.create.groupby_level_numbered(tableofcontent)
     assert result
     dumped = serializeraw.dump_toc(result)
@@ -86,7 +86,7 @@ def test_toc_groupby_level():
 def test_extract_toc_from_path(resources, pages, expected):
     utilatest.fixture_requires(resources)
     resources = power.link(resources)
-    navigators = serializeraw.create_pagetextcontentnavigators_frompath(
+    navigators = serializeraw.ptcn_frompath(
         path=resources,
         prefix='oneline',
         pages=pages,
@@ -95,5 +95,5 @@ def test_extract_toc_from_path(resources, pages, expected):
         navigators,
         min_detection_count=reftable.feature.toc.TOC_COUNT_MIN,
     )
-    flat = utila.flatten(extracted)
+    flat = utila.flat(extracted)
     assert len(flat) == expected, str(flat)

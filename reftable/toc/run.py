@@ -49,6 +49,6 @@ def extract(
         if active is None or strategy in active
     ]
     decision = reftable.toc.decider.decide(results)
-    if len(utila.flatten(decision.content)) < min_detection_count:
+    if len(utila.flat(decision.content)) < min_detection_count:
         decision = reftable.toc.strategy.ExtractionResult()
     return decision

@@ -8,7 +8,6 @@
 # =============================================================================
 
 import dataclasses
-import typing
 
 import utila
 
@@ -23,7 +22,7 @@ class TocLine:
     raw_level: str = dataclasses.field(default=None, compare=False)
 
 
-TocLines = typing.List[TocLine]
+TocLines = list[TocLine]
 
 
 def remove_duplication(headlines: TocLines) -> TocLines:

@@ -26,11 +26,11 @@ import reftable.abbrev.parser
 def test_abbreviation_parser(source, pages, expected):
     utilatest.fixture_requires(source)
     source = power.link(source)
-    normal = serializeraw.create_pagetextnavigators_frompath(
+    normal = serializeraw.ptn_frompath(
         source,
         pages=pages,
     )
-    oneline = serializeraw.create_pagetextnavigators_frompath(
+    oneline = serializeraw.ptn_frompath(
         source,
         prefix='oneline',
         pages=pages,

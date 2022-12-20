@@ -48,7 +48,7 @@ class RegexTocExtractor(reftable.toc.strategy.ExtractorStrategy):
             # TODO: RUN THIS FOR OTHER PAGES THAN THE FIRST ONE?
             content[0] = reftable.toc.strategy.remove_headline(content[0])
         parsed = [parse_page(page) for page in self.loaded]
-        flat = utila.flatten(parsed)
+        flat = utila.flat(parsed)
         grouped = reftable.toc.strategy.group(
             flat,
             strategy=self.__class__.__name__,

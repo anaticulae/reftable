@@ -30,7 +30,7 @@ import reftable.abbrev.simple
 def test_abbreviation_parse_simple(source, pages, expected):
     utilatest.fixture_requires(source)
     source = power.link(source)
-    content = serializeraw.create_pagetextnavigators_frompath(
+    content = serializeraw.ptn_frompath(
         source,
         prefix='oneline',
         pages=pages,

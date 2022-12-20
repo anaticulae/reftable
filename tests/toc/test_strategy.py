@@ -16,7 +16,7 @@ import tests.fixtures.tableofcontent
 @utilatest.longrun
 def test_toc_strategy_master72():
     """Headline 3.1. is writen over content border, therefore we have to
-    disable checking content border in PageTextContentNavigator
+    disable checking content border in PTCN
     creation. If we do not, the third position `11` detects only `10`
     headlines."""
     headlines = tests.fixtures.tableofcontent.master72_toc()

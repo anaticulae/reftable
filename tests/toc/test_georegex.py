@@ -15,9 +15,9 @@ import utilatest
 import reftable.toc.strategy.georegex as gtsg
 
 
-def master72() -> texmex.PageTextNavigators:
+def master72() -> texmex.PTNs:
     utilatest.fixture_requires(power.MASTER072_PDF)
-    result = serializeraw.create_pagetextnavigators_frompath(
+    result = serializeraw.ptn_frompath(
         power.link(power.MASTER072_PDF),
         pages=(1, 2),
         prefix='oneline',
@@ -27,7 +27,7 @@ def master72() -> texmex.PageTextNavigators:
 
 def bachelor111():
     utilatest.fixture_requires(power.BACHELOR111_PDF)
-    result = serializeraw.create_pagetextcontentnavigators_frompath(
+    result = serializeraw.ptcn_frompath(
         power.link(power.BACHELOR111_PDF),
         pages=(1, 2, 3, 4),
         prefix='oneline',

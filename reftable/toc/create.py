@@ -229,7 +229,7 @@ def level_zero(items):
     """
     # TODO: REMOVE THIS?
     level_min = min(
-        [item.level for item in items if item.level is not None],
+        (item.level for item in items if item.level is not None),
         default=utila.INF,
     )
     if not level_min:
@@ -284,7 +284,7 @@ def istocsections(toc) -> bool:
         return True
     levels = len([
         item for item in toc
-        if item.level and level_sections(item.level) in (1, 2)
+        if item.level and level_sections(item.level) in {1, 2}
     ])
     rate = levels / len(toc)
     if rate < 0.65:  # TODO: HOLY VALUE

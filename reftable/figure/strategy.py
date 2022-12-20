@@ -23,7 +23,7 @@ def run(
     sizeandborder: str,
     pages: tuple = None,
 ):
-    oneline = serializeraw.create_pagetextcontentnavigators_fromfile(
+    oneline = serializeraw.ptcn_fromfile(
         oneline_text,
         oneline_textpositions,
         sizeandborder=sizeandborder,
@@ -32,7 +32,7 @@ def run(
     )
     result = reftable.figure.normal.run(oneline)
     if not result:
-        ptcns = serializeraw.create_pagetextcontentnavigators_fromfile(
+        ptcns = serializeraw.ptcn_fromfile(
             text,
             textpositions,
             sizeandborder=sizeandborder,

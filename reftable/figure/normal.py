@@ -36,7 +36,7 @@ def run(oneline) -> list:
         ) for page in oneline
     ]
     extracted = reftable.toc.run.extract(oneline)
-    flat = utila.flatten(extracted.content)
+    flat = utila.flat(extracted.content)
     flat = remove_figure_sequence(flat)
     return flat
 

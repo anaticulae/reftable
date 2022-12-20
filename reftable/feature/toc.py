@@ -88,7 +88,7 @@ def run(navigators):
 
 
 def dump(extracted):
-    flat = utila.flatten(extracted.content)
+    flat = utila.flat(extracted.content)
     leveled = reftable.toc.create.groupby_level(flat)
     leveled.__strategy__ = extracted.strategy
     dumped = serializeraw.dump_toc(leveled)

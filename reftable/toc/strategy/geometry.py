@@ -36,7 +36,7 @@ class GeometryTocExtractor(reftable.toc.strategy.ExtractorStrategy):
             for page, group in grouped
         ]
         content = utila.notempty(content)
-        content = utila.flatten(content)
+        content = utila.flat(content)
         result = self.finalize_result(content)
         return result
 
@@ -51,7 +51,7 @@ class GeometryTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
 
 def analyse_page(
-    navigator: texmex.PageTextContentNavigators,
+    navigator: texmex.PTCNs,
     level_feeds: list,
 ) -> list:
     contentborder = navigator.content

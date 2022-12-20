@@ -22,14 +22,14 @@ def oneline(page) -> str:
     problems as a result of bad pdf printing or text grouping.
     """
     if isinstance(page, iamraw.Page):
-        lines = utila.flatten([
+        lines = utila.flat([
             container for container in page
             if isinstance(container, iamraw.TextContainer)
         ])
         # lines = oneline_merge(lines)
         # TODO: CHECK FOR ONELINE_MERGE
     else:
-        # PageTextNavigator
+        # PTN
         lines = oneline_merge(page[:])
     lines = [item.text for item in lines]
     lines = split_newlines(lines)

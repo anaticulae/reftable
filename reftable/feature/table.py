@@ -44,7 +44,7 @@ def work(
     Returns:
         dump of extracted table of content
     """
-    navigators = serializeraw.create_pagetextcontentnavigators_fromfile(
+    navigators = serializeraw.ptcn_fromfile(
         text,
         textpositions,
         sizeandborder=sizeandborder,
@@ -66,7 +66,7 @@ def work(
     # run
     extracted = reftable.toc.run.extract(navigators)
     # prepare
-    flat = utila.flatten(extracted.content)
+    flat = utila.flat(extracted.content)
     leveled = reftable.toc.create.groupby_level(flat)
     # dump
     dumped = serializeraw.dump_toc(leveled)

@@ -193,6 +193,6 @@ def tocstyle_frompath(source, pages):
         pages=pages,
     )
     extracted = reftable.toc.run.extract(ptcn)
-    extracted = utila.flatten(extracted)
+    extracted = utila.flat(extracted)  # pylint:disable=R0204
     current = elements.toc_style(extracted)
     return current

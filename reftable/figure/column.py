@@ -31,7 +31,7 @@ def run(ptcns) -> list:
         return []
     ptcns = utila.select_pages(ptcns, pages)
     extracted = [parse(item) for item in ptcns]
-    result = utila.flatten(extracted)
+    result = utila.flat(extracted)
     return result
 
 

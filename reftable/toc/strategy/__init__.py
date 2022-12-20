@@ -21,8 +21,8 @@ import reftable.toc.create
 
 @dataclasses.dataclass
 class ExtractionResult:
-    content: typing.List['TocLines'] = dataclasses.field(default_factory=list)
-    invalid: typing.List[typing.Any] = dataclasses.field(default_factory=list)
+    content: list['TocLines'] = dataclasses.field(default_factory=list)
+    invalid: list[typing.Any] = dataclasses.field(default_factory=list)
     strategy: str = None
 
     def __len__(self):
@@ -33,7 +33,7 @@ class ExtractionResult:
 
     def __str__(self):
         collected = [str(self.strategy), 'VALID:']
-        for item in utila.flatten(self.content):
+        for item in utila.flat(self.content):
             collected.append(item.raw)
         if self.invalid:
             collected.append('INVALID:')
@@ -44,7 +44,7 @@ class ExtractionResult:
         return result
 
 
-ExtractionResults = typing.List[ExtractionResult]
+ExtractionResults = list[ExtractionResult]
 
 
 class ExtractorStrategy(abc.ABC):
@@ -64,7 +64,7 @@ class ExtractorStrategy(abc.ABC):
             strategy=self.__class__.__name__,
         )
         content = extracted.content
-        if too_many_dots_in_title(utila.flatten(content)):
+        if too_many_dots_in_title(utila.flat(content)):
             utila.debug(f'too many dots in title: {self.__class__.__name__}')
             content = []
         result = ExtractionResult(
@@ -95,10 +95,10 @@ def group(extracted: reftable.toc.TocLines, strategy: str) -> ExtractionResult:
 
 
 def remove_headline(
-    content: texmex.PageTextNavigator,
+    content: texmex.PTN,
     headlines=None,
     count: int = 1,
-) -> texmex.PageTextNavigator:
+) -> texmex.PTN:
     """Remove table of content headline to improve extraction result."""
     if not headlines:
         headlines = elements.headline.lookup.TOC

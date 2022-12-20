@@ -18,7 +18,7 @@ HEADLINE_SIZE_MIN = configo.HV_FLOAT_PLUS(default=15.0)
 
 
 def select_contentpages(
-    textnavigators: texmex.PageTextNavigators,
+    textnavigators: texmex.PTNs,
     wrong_table=None,
     strategy: callable = None,
     skip_higherqual_level_three: bool = True,
@@ -59,7 +59,7 @@ def select_contentpages(
                 # level is mostly a table of content level
                 continue
         selected.append(page.page)
-    selected = sorted(utila.make_unique(selected))
+    selected = sorted(utila.unique(selected))
     # select biggest connected chunck
     if selected:
         selected = utila.groupby_diff(selected, maxdiff=1)

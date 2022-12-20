@@ -16,7 +16,7 @@ import reftable.abbrev.geometry
 
 
 def bachelor37():
-    content = serializeraw.create_pagetextnavigators_frompath(
+    content = serializeraw.ptn_frompath(
         power.link(power.BACHELOR037_PDF),
         pages=2,
     )
@@ -34,7 +34,7 @@ def bachelor37():
 def test_abbreviation_parse_strategy_geometry(source, pages, expected):
     utilatest.fixture_requires(source)
     source = power.link(source)
-    content = serializeraw.create_pagetextnavigators_frompath(
+    content = serializeraw.ptn_frompath(
         source,
         pages=pages,
     )

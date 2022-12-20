@@ -37,12 +37,12 @@ class GeometryRegexTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
         extracted = [analyse_page(item) for item in self.loaded]
-        flat = utila.flatten(utila.flatten(extracted))
+        flat = utila.flat(utila.flat(extracted))
         result = self.finalize_result(flat)
         return result
 
 
-def analyse_page(content: texmex.PageTextNavigator) -> reftable.toc.TocLines:
+def analyse_page(content: texmex.PTN) -> reftable.toc.TocLines:
     assert isinstance(content, texmex.NavigatorMixin), type(content)
     content = reftable.toc.strategy.remove_headline(content)
     grouped = group_areas(content)
@@ -55,7 +55,7 @@ def analyse_page(content: texmex.PageTextNavigator) -> reftable.toc.TocLines:
     return result
 
 
-def group_areas(content: texmex.PageTextNavigator) -> list:
+def group_areas(content: texmex.PTN) -> list:
     if not content:
         return []
     linedistances = texmex.linedistances(content, noneatend=False)

@@ -40,12 +40,12 @@ class PageTop(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
         extracted = [analyse_page(item) for item in self.loaded]
-        flat = utila.flatten(extracted)
+        flat = utila.flat(extracted)
         result = self.finalize_result(flat)
         return result
 
 
-def analyse_page(navigator: texmex.PageTextContentNavigators) -> list:
+def analyse_page(navigator: texmex.PTCNs) -> list:
     navigator: 'PTN' = reftable.toc.strategy.remove_headline(navigator)
     raw = navigator.debug
     raw = re.sub(r'\n(S\. \d{1,3})', r' \1', raw)
