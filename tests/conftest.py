@@ -92,9 +92,9 @@ RESOURCES = [
     power.TECH019_PDF,
     resinf.todo(
         power.DOCU007_PDF,
-        groupme='--content',
         cleanup=True,
         footnote=True,
+        groupme='--content --hefopa',
         headnote=True,
         pagenumber=True,
         tablero=True,
@@ -112,8 +112,10 @@ def extract(resources):
     genex.extract(
         resources,
         cleanup=True,
-        pagenumber=True,
         footnote=True,
+        groupme='--content --hefopa',
+        headnote=True,
+        pagenumber=True,
         sections=True,
         worker=WORKER,
     )
