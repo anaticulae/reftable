@@ -2,6 +2,15 @@
 
 Every noteable change is logged here.
 
+## v0.5.1 (2022-12-21)
+
+### Chore
+
+* extend resource generator (7e2111a8e669)
+* use quick installer (2d22a25b8301)
+* upgrade requirements.txt (030ec9646c10)
+* upgrade pipeline (92b209fc1ece)
+
 ## v0.5.0 (2022-10-01)
 
 ### Chore
