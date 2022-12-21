@@ -37,6 +37,7 @@ ARCHIVE = utila.join(reftable.ROOT, 'tests/table/expected', exist=True)
 ])
 @utilatest.nightly
 def test_tabletable_validate(source, pages, td, mp):
+    utilatest.fixture_requires(source)
     Evaluate(
         source=source,
         pages=utila.from_tuple(pages, separator=','),

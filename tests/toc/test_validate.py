@@ -13,6 +13,7 @@ import elements
 import iamraw
 import power
 import pytest
+import resinf
 import serializeraw
 import utila
 import utilatest
@@ -90,6 +91,9 @@ TEN = utila.make_tuple(10)
 def test_toc_validate(source, pages, mp, td):
     """Verify parsing behavior and check that toc is located
     automatically in range of `TEN` pages."""
+    if not utila.exists(resinf.link(source)):
+        # TODO: VERIFY WHY FIXTURE_REUQIRES DOES OT WORK
+        pytest.skip(reason='generate source')
     utilatest.fixture_requires(source)
     pages = utila.from_tuple(pages, ',') if pages else ':'
     Evaluate(source, pages, td.tmpdir, mp).evaluate()

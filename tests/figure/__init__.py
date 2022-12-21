@@ -8,12 +8,14 @@
 # =============================================================================
 
 import serializeraw
+import utilatest
 
 import reftable
 import tests
 
 
 def extract_table(source, pages, mp, td):
+    utilatest.fixture_requires(source)
     pages = ','.join((str(item) for item in pages)) if pages else ''
     pages = f'--pages={pages}' if pages else ''
     cmd = f'-i {source} --table {pages}'
