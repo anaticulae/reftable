@@ -2,6 +2,21 @@
 
 Every noteable change is logged here.
 
+## v0.6.0 (2023-01-09)
+
+### Feature
+
+* add equal sign as user character (3412eff42997)
+* increase number of optional dots (aa9e39f605b6)
+
+### Chore
+
+* extend test data generator (ccf68e035b97)
+* use new pre-release (5a343e1c8994)
+* upgrade requirements.txt (486bd1e508bc)
+* upgrade Jenkinsfile (bf0128a870fa)
+* upgrade pipe library (a3f12e46389e)
+
 ## v0.5.1 (2022-12-21)
 
 ### Chore
