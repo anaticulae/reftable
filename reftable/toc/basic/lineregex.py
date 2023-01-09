@@ -27,6 +27,8 @@ def parse(line: str) -> reftable.toc.TocLine:
     TocLine(level='4.5.1', title='Charakteristisches...Position', page='74'...)
     >>> parse('2.6.1.1. Hypoxia Inducible Factor (HIF) .......................................14 ')
     TocLine(level='2.6.1.1.', title='Hypoxia...', page='14', raw='2.6.1.1. Hypoxia....14', pdfpage='14', raw_level='2.6.1.1.')
+    >>> parse('3.5.3. Herstellung von cDNA („complementary“= komplementäre DNA)..................38')
+    TocLine(level='3.5.3.', title='Herstellung von cDNA („complementary“= komplementäre DNA)', page='38', raw='3.5.3....38', pdfpage='38', raw_level='3.5.3.')
     """
     assert isinstance(line, str), type(line)
     # see bachelor128
@@ -88,7 +90,7 @@ LEVEL_LETTER = r"""
 """
 
 USER_CHARACTER = [
-    r'\w\d\(\)\-\.\[\]\+',
+    r'\w\d\(\)\-\.\[\]\+\=',
     "'!\"&,/:;?ß*#",
     '’‚“”„…',
     '´`',
