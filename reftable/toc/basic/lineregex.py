@@ -25,6 +25,8 @@ def parse(line: str) -> reftable.toc.TocLine:
     TocLine(level='3.1.4', title='MOBILITÄTSKONZEPT NÖ 2030+'...)
     >>> parse('4.5.1 Charakteristisches Schwingungsverhalten der OH*-Intensität und der CoLE- Position . . . 74')
     TocLine(level='4.5.1', title='Charakteristisches...Position', page='74'...)
+    >>> parse('2.6.1.1. Hypoxia Inducible Factor (HIF) .......................................14 ')
+    TocLine(level='2.6.1.1.', title='Hypoxia...', page='14', raw='2.6.1.1. Hypoxia....14', pdfpage='14', raw_level='2.6.1.1.')
     """
     assert isinstance(line, str), type(line)
     # see bachelor128
@@ -58,7 +60,7 @@ def parse_linestart(line: str) -> reftable.toc.TocLine:
     return result
 
 
-LEVEL_DOTTED_OPTIONAL = r'(?P<level>(\d{1,2}\.?){1,3}\d{0,2})'
+LEVEL_DOTTED_OPTIONAL = r'(?P<level>(\d{1,2}\.?){1,4}\d{0,2})'
 
 LEVEL_LETTER = r"""
     (?P<level>
