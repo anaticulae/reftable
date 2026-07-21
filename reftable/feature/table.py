@@ -19,7 +19,6 @@ import utilo
 import reftable.pageselector
 import reftable.toc.create
 import reftable.toc.run
-import reftable.toc.strategy
 
 # minimal percentage of tabletable lines per page
 TOFS_PER_PAGE_MIN = configos.HV_PERCENT_PLUS(default=20, limit=100)
