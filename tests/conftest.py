@@ -98,7 +98,7 @@ RESOURCES = [
         groupme='--content --hefopa',
         headnote=True,
         pagenumber=True,
-        tablero=True,
+        # tablero=True,
     ),
 ]
 
