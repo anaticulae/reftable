@@ -34,13 +34,13 @@ def parse(line: str) -> reftable.toc.TocLine:
     # see bachelor128
     # 8.1         Fazit.................. 87
     line = utilo.normalize_whitespaces(line)
-    for pattern in [
+    for pattern in (
             EXTENDED_PATTERN_LETTER,
             EXTENDED_PATTERN,
             NO_DOTS,
             NO_LEVEL,
             DICTIONARY,
-    ]:
+    ):
         matched = re.match(pattern, line)
         if not matched:
             continue
@@ -89,6 +89,7 @@ LEVEL_LETTER = r"""
     )
 """
 
+# pylint:disable=invalid-name
 USER_CHARACTER = [
     r'\w\d\(\)\-\.\[\]\+\=',
     "'!\"&,/:;?ß*#",
