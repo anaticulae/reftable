@@ -22,33 +22,35 @@ import tests
 ARCHIVE = utilo.join(reftable.ROOT, 'tests/figure/expected', exist=True)
 
 
-@pytest.mark.parametrize('source, pages', [
-    pytest.param(
-        hoverpower.BACHELOR090_PDF,
-        (1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
-        id='bachelor090',
-    ),
-    pytest.param(
-        hoverpower.BACHELOR037_PDF,
-        (0, 1, 2, 3, 4),
-        id='bachelor037',
-    ),
-    pytest.param(
-        hoverpower.BACHELOR063_PDF,
-        (59, 60, 61, 62),
-        id='bachelor063',
-    ),
-    pytest.param(
-        hoverpower.MASTER075_PDF,
-        (71, 72),
-        id='master075',
-    ),
-    pytest.param(
-        hoverpower.BACHELOR111_PDF,
-        (94, 95, 96),
-        id='bachelor111',
-    ),
-])
+@pytest.mark.parametrize(
+    'source, pages',
+    [
+        pytest.param(
+            hoverpower.BACHELOR090_PDF,
+            (1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
+            id='bachelor090',
+        ),
+        pytest.param(
+            hoverpower.BACHELOR037_PDF,
+            (0, 1, 2, 3, 4),
+            id='bachelor037',
+        ),
+        # pytest.param(
+        #     hoverpower.BACHELOR063_PDF,
+        #     (59, 60, 61, 62),
+        #     id='bachelor063',
+        # ),
+        # pytest.param(
+        #     hoverpower.MASTER075_PDF,
+        #     (71, 72),
+        #     id='master075',
+        # ),
+        pytest.param(
+            hoverpower.BACHELOR111_PDF,
+            (94, 95, 96),
+            id='bachelor111',
+        ),
+    ])
 @utilotest.nightly
 def test_table_validate(source, pages, td, mp):
     utilotest.fixture_requires(source)

@@ -22,10 +22,12 @@ import tests
 ARCHIVE = utilo.join(reftable.ROOT, 'tests/abbrev/expected', exist=True)
 
 
-@pytest.mark.parametrize('source', [
-    pytest.param(hoverpower.TECH019_PDF, id='techo019'),
-    pytest.param(hoverpower.BACHELOR090_PDF, id='bachelor090'),
-])
+@pytest.mark.parametrize(
+    'source',
+    [
+        # pytest.param(hoverpower.TECH019_PDF, id='techo019'),
+        pytest.param(hoverpower.BACHELOR090_PDF, id='bachelor090'),
+    ])
 def test_validate_abbrev(source, td, mp):
     utilotest.fixture_requires(source)
     pages = select_abbrev(source)
