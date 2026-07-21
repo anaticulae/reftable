@@ -7,13 +7,13 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utilatest
+import utilotest
 
 import reftable.toc.run
 import tests.fixtures.tableofcontent
 
 
-@utilatest.longrun
+@utilotest.longrun
 def test_toc_strategy_master72():
     """Headline 3.1. is writen over content border, therefore we have to
     disable checking content border in PTCN
@@ -28,7 +28,7 @@ def test_toc_strategy_master72():
     assert count == expected
 
 
-@utilatest.longrun
+@utilotest.longrun
 def test_toc_strategy_technial24():
     headlines = tests.fixtures.tableofcontent.technical24_toc()
     expected = [1, 1, 2, 7, 5, 1, 16, 1]

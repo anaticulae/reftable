@@ -26,18 +26,18 @@ Should we support following whitespaces?
 
 import re
 
-import configo
+import configos
 import iamraw
-import utila
+import utilo
 
 import reftable.toc
 import reftable.toc.basic.layout
 import reftable.toc.basic.lineregex
 import reftable.toc.strategy
 
-TOC_LINE_LENGTH_MAX = configo.HV_INT_PLUS(default=250)
+TOC_LINE_LENGTH_MAX = configos.HV_INT_PLUS(default=250)
 
-TOC_LINE_LENGTH_MIN = configo.HV_INT_PLUS(default=9)
+TOC_LINE_LENGTH_MIN = configos.HV_INT_PLUS(default=9)
 
 
 class RegexTocExtractor(reftable.toc.strategy.ExtractorStrategy):
@@ -48,7 +48,7 @@ class RegexTocExtractor(reftable.toc.strategy.ExtractorStrategy):
             # TODO: RUN THIS FOR OTHER PAGES THAN THE FIRST ONE?
             content[0] = reftable.toc.strategy.remove_headline(content[0])
         parsed = [parse_page(page) for page in self.loaded]
-        flat = utila.flat(parsed)
+        flat = utilo.flat(parsed)
         grouped = reftable.toc.strategy.group(
             flat,
             strategy=self.__class__.__name__,
@@ -110,14 +110,14 @@ def parse(content: str) -> reftable.toc.TocLines:
         for line in re.finditer(pattern, content):
             item = reftable.toc.basic.lineregex.extract_match(line)
             if len(item.raw) < TOC_LINE_LENGTH_MIN:
-                utila.debug(f'toc line too short: {item.raw}')
+                utilo.debug(f'toc line too short: {item.raw}')
                 # TODO: REMOVE HACK LATER
                 continue
-            utila.verbose(f'pattern {number}: {item}\n{line}\n')
+            utilo.verbose(f'pattern {number}: {item}\n{line}\n')
             result.append(item)
             # remove already matched content to do not confuse lower
             # strict pattern
-            content = utila.ghost_replace(
+            content = utilo.ghost_replace(
                 content,
                 pattern=item.raw,
                 replacement='\12',  # TODO: HOLY VALUE

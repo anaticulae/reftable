@@ -7,9 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import hoverpower
 import serializeraw
-import utilatest
+import utilotest
 
 
 def headlines_frompath(path: str, pages=None):
@@ -23,18 +23,20 @@ def headlines_frompath(path: str, pages=None):
 
 
 def master72_toc():
-    utilatest.fixture_requires(power.MASTER072_PDF)
-    return headlines_frompath(power.link(power.MASTER072_PDF), pages=(1, 2))
+    utilotest.fixture_requires(hoverpower.MASTER072_PDF)
+    return headlines_frompath(hoverpower.link(hoverpower.MASTER072_PDF),
+                              pages=(1, 2))
 
 
 def bachelor111_toc():
-    utilatest.fixture_requires(power.BACHELOR111_PDF)
+    utilotest.fixture_requires(hoverpower.BACHELOR111_PDF)
     return headlines_frompath(
-        power.link(power.BACHELOR111_PDF),
+        hoverpower.link(hoverpower.BACHELOR111_PDF),
         pages=(1, 2, 3, 4),
     )
 
 
 def technical24_toc():
-    utilatest.fixture_requires(power.TECH024_PDF)
-    return headlines_frompath(power.link(power.TECH024_PDF), pages=(1,))
+    utilotest.fixture_requires(hoverpower.TECH024_PDF)
+    return headlines_frompath(hoverpower.link(hoverpower.TECH024_PDF),
+                              pages=(1,))

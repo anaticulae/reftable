@@ -7,11 +7,11 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import hoverpower
 import pytest
 import serializeraw
-import utila
-import utilatest
+import utilo
+import utilotest
 
 import reftable.feature.toc
 import reftable.pageselector
@@ -19,17 +19,17 @@ import reftable.toc.create
 import reftable.toc.strategy
 
 
-@utilatest.requires(power.DOCU007_PDF)
+@utilotest.requires(hoverpower.DOCU007_PDF)
 def test_toc_groupby_level():
     navigators = serializeraw.ptcn_frompath(
-        power.link(power.DOCU007_PDF),
+        hoverpower.link(hoverpower.DOCU007_PDF),
         prefix='oneline',
     )
     selected = reftable.pageselector.select_contentpages(navigators)
     # select toc pages only
     navigators = [item for item in navigators if item.page in selected]
     tableofcontent = reftable.toc.run.extract(navigators)
-    tableofcontent = utila.flat(tableofcontent.content)  # pylint:disable=R0204
+    tableofcontent = utilo.flat(tableofcontent.content)  # pylint:disable=R0204
     result = reftable.toc.create.groupby_level_numbered(tableofcontent)
     assert result
     dumped = serializeraw.dump_toc(result)
@@ -39,53 +39,53 @@ def test_toc_groupby_level():
 
 @pytest.mark.parametrize('resources, pages, expected', [
     pytest.param(
-        power.DOCU027_PDF,
+        hoverpower.DOCU027_PDF,
         (2,),
         13,
         id='docu027',
     ),
     pytest.param(
-        power.DOCU007_PDF,
+        hoverpower.DOCU007_PDF,
         (0,),
         12,
         marks=pytest.mark.xfail,
         id='simple',
     ),
     pytest.param(
-        power.DOCU035_PDF,
+        hoverpower.DOCU035_PDF,
         (5,),
         0,
         id='notoc',
     ),
     pytest.param(
-        power.MASTER099B_PDF,
+        hoverpower.MASTER099B_PDF,
         (2,),
         14,
         id='master099b',
     ),
     pytest.param(
-        power.BACHELOR037_PDF,
+        hoverpower.BACHELOR037_PDF,
         (3, 4),
         47,
         id='bachelor037',
     ),
     pytest.param(
-        power.BACHELOR241_PDF,
+        hoverpower.BACHELOR241_PDF,
         (6,),
         35,
         id='bachelor241p6',
         marks=pytest.mark.xfail(reason='improve selector strategy'),
     ),
     pytest.param(
-        power.BACHELOR241_PDF,
+        hoverpower.BACHELOR241_PDF,
         (4,),
         25,
         id='bachelor241p4',
     ),
 ])
 def test_extract_toc_from_path(resources, pages, expected):
-    utilatest.fixture_requires(resources)
-    resources = power.link(resources)
+    utilotest.fixture_requires(resources)
+    resources = hoverpower.link(resources)
     navigators = serializeraw.ptcn_frompath(
         path=resources,
         prefix='oneline',
@@ -95,5 +95,5 @@ def test_extract_toc_from_path(resources, pages, expected):
         navigators,
         min_detection_count=reftable.feature.toc.TOC_COUNT_MIN,
     )
-    flat = utila.flat(extracted)
+    flat = utilo.flat(extracted)
     assert len(flat) == expected, str(flat)

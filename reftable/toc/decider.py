@@ -15,7 +15,7 @@ implemented in `__lt__` method.
 
 import dataclasses
 
-import utila
+import utilo
 
 import reftable.toc.strategy as gts
 
@@ -68,11 +68,11 @@ def decide(items: gts.ExtractionResults) -> gts.ExtractionResult:
     if not items:
         return None
     for item in items:
-        utila.debug(item)
+        utilo.debug(item)
     analyzed = [analyze_result(item) for item in items]
     # debug result
     for item in analyzed:
-        utila.debug(item)
+        utilo.debug(item)
     selector = dict(zip(analyzed, items))
     order = sorted(analyzed)
     first_item = order[0]
@@ -83,12 +83,12 @@ def decide(items: gts.ExtractionResults) -> gts.ExtractionResult:
 def analyze_result(result: gts.ExtractionResult) -> ExtractionStatistic:
     # TODO: REMOVE FLATTEN
     # TODO: REMOVE valid_content = reftable.toc.strategy.group(valid_content)
-    flat = utila.flat(result)
+    flat = utilo.flat(result)
     oneliner = len([item for item in result if len(item) == 1])
     parsed_level = [item.level for item in flat if item.level is not None]
     oneline_factor = 0.0
     if len(result) >= 1:
-        oneline_factor = utila.roundme(oneliner / len(result))  # pylint:disable=R0204
+        oneline_factor = utilo.roundme(oneliner / len(result))  # pylint:disable=R0204
     result = ExtractionStatistic(
         validitem_count=len(flat),
         invalid_count=len(result.invalid),

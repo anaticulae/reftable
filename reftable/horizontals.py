@@ -7,14 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import configo
+import configos
 import iamraw
-import utila
+import utilo
 
 import reftable
 import reftable.likelihood
 
-ASSERT_HORIZONTAL_DIFF_MAX = configo.HV_FLOAT_PLUS(default=5.0)
+ASSERT_HORIZONTAL_DIFF_MAX = configos.HV_FLOAT_PLUS(default=5.0)
 
 
 def match(
@@ -34,7 +34,7 @@ def match(
     """
     # TODO: Check y0/y1
     result = any(
-        utila.near(item.box.y0, vertical_position, diff=maxdiff)
+        utilo.near(item.box.y0, vertical_position, diff=maxdiff)
         for item in content)
     return result
 
@@ -73,7 +73,7 @@ def biggest_hlinecluster_in_area(
         # no cluster is in range
         return None
 
-    # remove clusters with to few elements
+    # remove clusters with to few elementae
     valid = [item for item in valid if len(item) >= min_group_size]
 
     maximized = reftable.likelihood.select_maxi(valid, count=max_group_count)

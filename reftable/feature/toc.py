@@ -16,10 +16,10 @@ Outdated approaches
 
 """
 
-import configo
-import elements
+import configos
+import elementae
 import serializeraw
-import utila
+import utilo
 
 import reftable.feature
 import reftable.pageselector
@@ -29,12 +29,12 @@ import reftable.toc.run
 import reftable.toc.strategy
 
 # minimal percentage of toc lines per page
-TOCS_PER_PAGE_MIN = configo.HV_PERCENT_PLUS(default=30, limit=100)
+TOCS_PER_PAGE_MIN = configos.HV_PERCENT_PLUS(default=30, limit=100)
 
 # limit possible toc to the first 15 pages
-POSSIBLE_PAGES = utila.make_tuple(15)
+POSSIBLE_PAGES = utilo.make_tuple(15)
 
-TOC_COUNT_MIN = configo.HV_INT_PLUS(default=4)
+TOC_COUNT_MIN = configos.HV_INT_PLUS(default=4)
 
 
 def work(
@@ -76,7 +76,7 @@ def run(navigators):
         skip_higherqual_level_three=False,
         valid_lines_perpage_min=TOCS_PER_PAGE_MIN,
     )
-    navigators = utila.select_pages(
+    navigators = utilo.select_pages(
         navigators,
         pages=selected,
     )
@@ -88,11 +88,11 @@ def run(navigators):
 
 
 def dump(extracted):
-    flat = utila.flat(extracted.content)
+    flat = utilo.flat(extracted.content)
     leveled = reftable.toc.create.groupby_level(flat)
     leveled.__strategy__ = extracted.strategy
     dumped = serializeraw.dump_toc(leveled)
     return dumped
 
 
-NO_TOC = elements.headline.lookup.HEADLINES - elements.headline.lookup.TOC
+NO_TOC = elementae.headline.lookup.HEADLINES - elementae.headline.lookup.TOC

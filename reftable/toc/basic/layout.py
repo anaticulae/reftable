@@ -10,11 +10,11 @@
 import copy
 import math
 
-import configo
+import configos
 import iamraw
-import utila
+import utilo
 
-ONELINE_MERGE_Y_DIFF_MAX = configo.HV_FLOAT_PLUS(default=5.0)
+ONELINE_MERGE_Y_DIFF_MAX = configos.HV_FLOAT_PLUS(default=5.0)
 
 
 def oneline(page) -> str:
@@ -22,7 +22,7 @@ def oneline(page) -> str:
     problems as a result of bad pdf printing or text grouping.
     """
     if isinstance(page, iamraw.Page):
-        lines = utila.flat([
+        lines = utilo.flat([
             container for container in page
             if isinstance(container, iamraw.TextContainer)
         ])
@@ -41,7 +41,7 @@ def oneline(page) -> str:
     # FOOTER STRATEGY NEEDS SOME DATA
     # TODO: THINK ABOUT REMOVING THIS
     lines = [item for item in lines if len(item.split()) > 1]
-    text = utila.NEWLINE.join(lines)
+    text = utilo.NEWLINE.join(lines)
     return text
 
 

@@ -8,7 +8,7 @@
 # =============================================================================
 
 import texmex
-import utila
+import utilo
 
 import reftable.toc.basic.group
 import reftable.toc.basic.lineregex
@@ -18,7 +18,7 @@ class BalanceTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
         extracted = [analyse_page(item) for item in self.loaded]
-        flat = utila.flat(extracted)
+        flat = utilo.flat(extracted)
         result = self.finalize_result(flat)
         return result
 
@@ -26,7 +26,7 @@ class BalanceTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 def analyse_page(navigator: texmex.PTCNs) -> list:
     navigator: 'PTN' = reftable.toc.strategy.remove_headline(navigator)
     raw: str = navigator.debug
-    raw = utila.normalize_text(
+    raw = utilo.normalize_text(
         raw,
         merge_divis=False,
         normalize_newline=False,
@@ -37,14 +37,14 @@ def analyse_page(navigator: texmex.PTCNs) -> list:
     for item in lines:
         if not item.strip():
             continue
-        item = utila.normalize_whitespaces(item)
+        item = utilo.normalize_whitespaces(item)
         parsed = reftable.toc.basic.lineregex.parse(item)
         if not parsed:
             # backup strategy with page number
             parsed = reftable.toc.basic.lineregex.parse_linestart(item)
         if not parsed:
-            short = utila.shrink(item, maxlength=70)
-            utila.debug(f'could not backup parse: {short}')
+            short = utilo.shrink(item, maxlength=70)
+            utilo.debug(f'could not backup parse: {short}')
             continue
         result.append(parsed)
     reftable.toc.basic.group.set_pagelocation(

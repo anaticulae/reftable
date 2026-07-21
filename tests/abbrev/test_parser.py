@@ -7,25 +7,25 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import hoverpower
 import pytest
 import serializeraw
-import utilatest
+import utilotest
 
 import reftable.abbrev
 import reftable.abbrev.parser
 
 
 @pytest.mark.parametrize('source, pages, expected', [
-    pytest.param(power.BACHELOR037_PDF, 1, 26, id='bachelor37'),
-    pytest.param(power.HOME050_PDF, 6, 18, id='homework50'),
-    pytest.param(power.MASTER116_PDF, 96, 8, id='master116'),
-    pytest.param(power.DISS205_PDF, 14, 17, id='diss205'),
+    pytest.param(hoverpower.BACHELOR037_PDF, 1, 26, id='bachelor37'),
+    pytest.param(hoverpower.HOME050_PDF, 6, 18, id='homework50'),
+    pytest.param(hoverpower.MASTER116_PDF, 96, 8, id='master116'),
+    pytest.param(hoverpower.DISS205_PDF, 14, 17, id='diss205'),
 ])
-@utilatest.longrun
+@utilotest.longrun
 def test_abbreviation_parser(source, pages, expected):
-    utilatest.fixture_requires(source)
-    source = power.link(source)
+    utilotest.fixture_requires(source)
+    source = hoverpower.link(source)
     normal = serializeraw.ptn_frompath(
         source,
         pages=pages,

@@ -7,14 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utilatest
+import utilotest
 
 import reftable.toc.run
 import reftable.toc.strategy.geometry
 import tests.fixtures.tableofcontent
 
 
-@utilatest.longrun
+@utilotest.longrun
 def test_toc_strategy_geometry():
     headlines = tests.fixtures.tableofcontent.bachelor111_toc()
 
@@ -36,7 +36,7 @@ def test_toc_strategy_geometry():
     assert current == expected
 
 
-@utilatest.longrun
+@utilotest.longrun
 def test_toc_strategy_bachelor111():
     headlines = tests.fixtures.tableofcontent.bachelor111_toc()
 

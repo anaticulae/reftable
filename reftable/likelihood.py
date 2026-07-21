@@ -7,9 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-# TODO: REMOVE AFTER UPGRADING UTILA
+# TODO: REMOVE AFTER UPGRADING utilo
 
-import utila
+import utilo
 
 
 def uniform_result(items):  # pylint:disable=W9012
@@ -92,7 +92,7 @@ def _uniform_list(items):
     if not features:
         return None
     result = [item / features for item in items]
-    result = [utila.roundme(item) for item in result]
+    result = [utilo.roundme(item) for item in result]
     return result
 
 

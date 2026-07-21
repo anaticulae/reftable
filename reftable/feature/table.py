@@ -10,11 +10,11 @@
 ==========================
 """
 
-import configo
-import elements
+import configos
+import elementae
 import iamraw
 import serializeraw
-import utila
+import utilo
 
 import reftable.pageselector
 import reftable.toc.create
@@ -22,7 +22,7 @@ import reftable.toc.run
 import reftable.toc.strategy
 
 # minimal percentage of tabletable lines per page
-TOFS_PER_PAGE_MIN = configo.HV_PERCENT_PLUS(default=20, limit=100)
+TOFS_PER_PAGE_MIN = configos.HV_PERCENT_PLUS(default=20, limit=100)
 
 
 def work(
@@ -59,14 +59,14 @@ def work(
     if not selected:
         return EMPTY
     # select toc pages only
-    navigators = utila.select_pages(navigators, pages=selected)
+    navigators = utilo.select_pages(navigators, pages=selected)
     if not headline_start(navigators[0]):
-        utila.error(f'no valid table headline start: {selected}')
+        utilo.error(f'no valid table headline start: {selected}')
         return EMPTY
     # run
     extracted = reftable.toc.run.extract(navigators)
     # prepare
-    flat = utila.flat(extracted.content)
+    flat = utilo.flat(extracted.content)
     leveled = reftable.toc.create.groupby_level(flat)
     # dump
     dumped = serializeraw.dump_toc(leveled)
@@ -74,17 +74,17 @@ def work(
 
 
 EMPTY = serializeraw.dump_toc(iamraw.Toc())
-NO_TABLES = (elements.ABBREVIATION | elements.TOC | elements.FIGURETABLE |
-             elements.SYMBOLTABLE)
+NO_TABLES = (elementae.ABBREVIATION | elementae.TOC | elementae.FIGURETABLE |
+             elementae.SYMBOLTABLE)
 
 
 def headline_start(ptn) -> bool:
     """Verify that the first ptn starts with a valid figure table headline."""
     # TODO: INTEGRATE INTO SELECT_CONTENTPAGES
     for line in ptn[0:8]:
-        parsed = elements.headline.parser.parse_headline(line.text)
+        parsed = elementae.headline.parser.parse_headline(line.text)
         if not parsed:
             continue
-        if utila.verysimilar(parsed[0], expected=elements.TABLETABLE):
+        if utilo.verysimilar(parsed[0], expected=elementae.TABLETABLE):
             return True
     return False

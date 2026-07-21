@@ -9,66 +9,66 @@
 
 import functools
 
+import hoverpower
 import iamraw
-import power
 import pytest
 import serializeraw
-import utila
-import utilatest
+import utilo
+import utilotest
 
 import reftable
 import tests
 
-ARCHIVE = utila.join(reftable.ROOT, 'tests/figure/expected', exist=True)
+ARCHIVE = utilo.join(reftable.ROOT, 'tests/figure/expected', exist=True)
 
 
 @pytest.mark.parametrize('source, pages', [
     pytest.param(
-        power.BACHELOR090_PDF,
+        hoverpower.BACHELOR090_PDF,
         (1, 2, 3, 4, 5, 6, 7, 8, 9, 10),
         id='bachelor090',
     ),
     pytest.param(
-        power.BACHELOR037_PDF,
+        hoverpower.BACHELOR037_PDF,
         (0, 1, 2, 3, 4),
         id='bachelor037',
     ),
     pytest.param(
-        power.BACHELOR063_PDF,
+        hoverpower.BACHELOR063_PDF,
         (59, 60, 61, 62),
         id='bachelor063',
     ),
     pytest.param(
-        power.MASTER075_PDF,
+        hoverpower.MASTER075_PDF,
         (71, 72),
         id='master075',
     ),
     pytest.param(
-        power.BACHELOR111_PDF,
+        hoverpower.BACHELOR111_PDF,
         (94, 95, 96),
         id='bachelor111',
     ),
 ])
-@utilatest.nightly
+@utilotest.nightly
 def test_table_validate(source, pages, td, mp):
-    utilatest.fixture_requires(source)
+    utilotest.fixture_requires(source)
     Evaluate(
         source=source,
-        pages=utila.from_tuple(pages, separator=','),
-        expected=utila.file_name(source),
+        pages=utilo.from_tuple(pages, separator=','),
+        expected=utilo.file_name(source),
         workdir=td.tmpdir,
         mp=mp,
     ).evaluate()
 
 
-class Evaluate(utilatest.BaseLiner):
+class Evaluate(utilotest.BaseLiner):
 
     def __init__(self, source, pages, expected, workdir, mp):
         super().__init__(
             program=functools.partial(tests.run, mp=mp),
             step='figure',
             pages=pages,
-            source=power.link(source),
+            source=hoverpower.link(source),
             workdir=workdir,
             archive=ARCHIVE,
             loader=self.load_table,
@@ -100,5 +100,5 @@ def figures_raw(toc: iamraw.Toc) -> str:
 
     for item in toc:
         result.extend(recursive(item, level=0))
-    raw = utila.NEWLINE.join(result)
+    raw = utilo.NEWLINE.join(result)
     return raw

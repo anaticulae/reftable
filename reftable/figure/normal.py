@@ -7,8 +7,8 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import elements
-import utila
+import elementae
+import utilo
 
 import reftable.figure
 import reftable.pageselector
@@ -25,18 +25,18 @@ def run(oneline) -> list:
     if not selected:
         return []
     # select figure pages only
-    oneline = utila.select_pages(oneline, pages=selected)
+    oneline = utilo.select_pages(oneline, pages=selected)
     if not headline_start(oneline[0]):
-        utila.error(f'no valid figure headline start: {selected}')
+        utilo.error(f'no valid figure headline start: {selected}')
         return []
     oneline = [
         reftable.toc.strategy.remove_headline(
             page,
-            headlines=elements.FIGURETABLE,
+            headlines=elementae.FIGURETABLE,
         ) for page in oneline
     ]
     extracted = reftable.toc.run.extract(oneline)
-    flat = utila.flat(extracted.content)
+    flat = utilo.flat(extracted.content)
     flat = remove_figure_sequence(flat)
     return flat
 
@@ -44,15 +44,15 @@ def run(oneline) -> list:
 def headline_start(ptn) -> bool:
     """Verify that the first ptn starts with a valid figure table headline."""
     for line in ptn[0:8]:
-        parsed = elements.headline.parser.parse_headline(line.text)
+        parsed = elementae.headline.parser.parse_headline(line.text)
         if not parsed:
             continue
-        if utila.verysimilar(parsed[0], expected=elements.FIGURETABLE):
+        if utilo.verysimilar(parsed[0], expected=elementae.FIGURETABLE):
             return True
     return False
 
 
-FIGURE_REMOVE = utila.compiles(r"""
+FIGURE_REMOVE = utilo.compiles(r"""
     ^
     (
         ABBILDUNG|

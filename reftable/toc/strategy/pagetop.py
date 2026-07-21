@@ -28,7 +28,7 @@ Example
 import re
 
 import texmex
-import utila
+import utilo
 
 import reftable.toc.basic.group
 import reftable.toc.basic.lineregex
@@ -40,7 +40,7 @@ class PageTop(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
         extracted = [analyse_page(item) for item in self.loaded]
-        flat = utila.flat(extracted)
+        flat = utilo.flat(extracted)
         result = self.finalize_result(flat)
         return result
 
@@ -56,7 +56,7 @@ def analyse_page(navigator: texmex.PTCNs) -> list:
     matched = [[
         index
         for index, line in enumerate(lines)
-        if utila.verysimilar(expected=item.raw, current=line)
+        if utilo.verysimilar(expected=item.raw, current=line)
     ]
                for item in parsed]
     single_match_only = set(len(item) for item in matched) == {1}
@@ -71,7 +71,7 @@ def analyse_page(navigator: texmex.PTCNs) -> list:
             result.append(parsed[index])
             continue
         item = parsed[index]
-        for append in utila.rlist(start=current[0] + 1, end=after[0]):
+        for append in utilo.rlist(start=current[0] + 1, end=after[0]):
             item.title += ' ' + lines[append]
             item.raw += ' ' + lines[append]
         result.append(item)

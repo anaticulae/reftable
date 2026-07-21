@@ -12,14 +12,14 @@
 
 import functools
 
-import configo
+import configos
 import texmex
-import utila
+import utilo
 
 import reftable.toc.basic.group
 import reftable.toc.strategy
 
-HEADLINE_LEVEL_MAX = configo.HV_INT_PLUS(default=3)
+HEADLINE_LEVEL_MAX = configos.HV_INT_PLUS(default=3)
 
 
 class GeometryTocExtractor(reftable.toc.strategy.ExtractorStrategy):
@@ -35,8 +35,8 @@ class GeometryTocExtractor(reftable.toc.strategy.ExtractorStrategy):
             reftable.toc.basic.group.parse_group(group, page)
             for page, group in grouped
         ]
-        content = utila.notempty(content)
-        content = utila.flat(content)
+        content = utilo.notempty(content)
+        content = utilo.flat(content)
         result = self.finalize_result(content)
         return result
 
@@ -99,14 +99,14 @@ def level(xdist, levels):
     return None
 
 
-PAGENUMBER_HEADLINE = utila.splitlines("""
+PAGENUMBER_HEADLINE = utilo.splitlines("""
 Page
 Pages
 Seite
 """)
 
 # max distance from content border to text start
-RIGHTDIST_MAX = configo.HV_INT_PLUS(default=80)
+RIGHTDIST_MAX = configos.HV_INT_PLUS(default=80)
 
 
 def remove_pagenumber_headline(content):
@@ -126,7 +126,7 @@ def remove_pagenumber_headline(content):
         # right text orientation
         if bounding.rightdist < RIGHTDIST_MAX:
             text = item[1][1].text
-            if utila.verysimilar(
+            if utilo.verysimilar(
                     current=text,
                     expected=PAGENUMBER_HEADLINE,
             ):

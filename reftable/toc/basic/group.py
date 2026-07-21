@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 import reftable.toc.basic.lineregex
 
@@ -33,7 +33,7 @@ def parse_group(items, page: int) -> reftable.toc.TocLines:
                 result.append(extracted)
             else:
                 # log not parsed
-                utila.debug(f'could not group and parse {collected}')
+                utilo.debug(f'could not group and parse {collected}')
             collected = []
             continue
         result.append(parsed_item)

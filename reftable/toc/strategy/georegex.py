@@ -22,22 +22,22 @@ Strategy:
 
 """
 
-import configo
+import configos
 import texmex
-import utila
+import utilo
 
 import reftable.toc
 import reftable.toc.basic.group
 import reftable.toc.strategy
 
-GROUP_GAP_MIN = configo.HV_FLOAT_PLUS(default=30.0)
+GROUP_GAP_MIN = configos.HV_FLOAT_PLUS(default=30.0)
 
 
 class GeometryRegexTocExtractor(reftable.toc.strategy.ExtractorStrategy):
 
     def result(self) -> reftable.toc.strategy.ExtractionResult:
         extracted = [analyse_page(item) for item in self.loaded]
-        flat = utila.flat(utila.flat(extracted))
+        flat = utilo.flat(utilo.flat(extracted))
         result = self.finalize_result(flat)
         return result
 
@@ -51,7 +51,7 @@ def analyse_page(content: texmex.PTN) -> reftable.toc.TocLines:
         for items in grouped
     ]
     # remove not parsed
-    result = utila.notempty(result)
+    result = utilo.notempty(result)
     return result
 
 

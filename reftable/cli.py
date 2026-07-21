@@ -7,54 +7,54 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
-import utila
+import utilo
 
 import reftable
 
 DESCRIPTION = ''
 
 WORKPLAN = [
-    utila.create_step(
+    utilo.create_step(
         'abbrev',
         inputs=[
-            utila.ResultFile(producer='rawmaker', name='text_text'),
-            utila.ResultFile(producer='rawmaker', name='text_positions'),
-            utila.ResultFile(producer='rawmaker', name='oneline_text_text'),
-            utila.ResultFile('rawmaker', name='oneline_text_positions'),
-            utila.ResultFile(producer='groupme', name='footer_footerheader'),
-            utila.ResultFile(producer='rawmaker', name='border_pages'),
+            utilo.ResultFile(producer='rawmaker', name='text_text'),
+            utilo.ResultFile(producer='rawmaker', name='text_positions'),
+            utilo.ResultFile(producer='rawmaker', name='oneline_text_text'),
+            utilo.ResultFile('rawmaker', name='oneline_text_positions'),
+            utilo.ResultFile(producer='groupme', name='footer_footerheader'),
+            utilo.ResultFile(producer='rawmaker', name='border_pages'),
         ],
         output=('abbrev',),
     ),
-    utila.create_step(
+    utilo.create_step(
         'toc',
         inputs=[
-            utila.ResultFile(producer='rawmaker', name='oneline_text_text'),
-            utila.ResultFile('rawmaker', name='oneline_text_positions'),
-            utila.ResultFile(producer='groupme', name='footer_footerheader'),
-            utila.ResultFile(producer='rawmaker', name='border_pages'),
+            utilo.ResultFile(producer='rawmaker', name='oneline_text_text'),
+            utilo.ResultFile('rawmaker', name='oneline_text_positions'),
+            utilo.ResultFile(producer='groupme', name='footer_footerheader'),
+            utilo.ResultFile(producer='rawmaker', name='border_pages'),
         ],
         output=('toc',),
     ),
-    utila.create_step(
+    utilo.create_step(
         'figure',
         inputs=[
-            utila.ResultFile(producer='rawmaker', name='text_text'),
-            utila.ResultFile(producer='rawmaker', name='text_positions'),
-            utila.ResultFile(producer='rawmaker', name='oneline_text_text'),
-            utila.ResultFile('rawmaker', name='oneline_text_positions'),
-            utila.ResultFile(producer='groupme', name='footer_footerheader'),
-            utila.ResultFile(producer='rawmaker', name='border_pages'),
+            utilo.ResultFile(producer='rawmaker', name='text_text'),
+            utilo.ResultFile(producer='rawmaker', name='text_positions'),
+            utilo.ResultFile(producer='rawmaker', name='oneline_text_text'),
+            utilo.ResultFile('rawmaker', name='oneline_text_positions'),
+            utilo.ResultFile(producer='groupme', name='footer_footerheader'),
+            utilo.ResultFile(producer='rawmaker', name='border_pages'),
         ],
         output=('figure',),
     ),
-    utila.create_step(
+    utilo.create_step(
         'table',
         inputs=[
-            utila.ResultFile(producer='rawmaker', name='oneline_text_text'),
-            utila.ResultFile('rawmaker', name='oneline_text_positions'),
-            utila.ResultFile(producer='groupme', name='footer_footerheader'),
-            utila.ResultFile(producer='rawmaker', name='border_pages'),
+            utilo.ResultFile(producer='rawmaker', name='oneline_text_text'),
+            utilo.ResultFile('rawmaker', name='oneline_text_positions'),
+            utilo.ResultFile(producer='groupme', name='footer_footerheader'),
+            utilo.ResultFile(producer='rawmaker', name='border_pages'),
         ],
         output=('table',),
     ),
@@ -62,11 +62,11 @@ WORKPLAN = [
 
 
 def main():
-    utila.featurepack(
+    utilo.featurepack(
         workplan=WORKPLAN,
         root=reftable.ROOT,
         featurepackage='reftable.feature',
-        config=utila.FeaturePackConfig(
+        config=utilo.FeaturePackConfig(
             description=DESCRIPTION,
             multiprocessed=True,
             name=reftable.PROCESS,

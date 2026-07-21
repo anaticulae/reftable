@@ -7,28 +7,28 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import hoverpower
 import pytest
-import utilatest
+import utilotest
 
 import tests.table
 
 
 @pytest.mark.parametrize('source, pages', [
     pytest.param(
-        power.MASTER089_PDF,
+        hoverpower.MASTER089_PDF,
         (85, 86, 87, 88),
         id='master89_page85_86_87_88',
     ),
     pytest.param(
-        power.BACHELOR111_PDF,
+        hoverpower.BACHELOR111_PDF,
         (0, 1, 2, 3, 4, 5, 6),
         id='bachelor111document_start',
     ),
 ])
-@utilatest.nightly
+@utilotest.nightly
 def test_regression_non_valid_examples(source, pages, mp, td):
-    source = power.link(source)
+    source = hoverpower.link(source)
     extracted = tests.figure.extract_table(
         source,
         pages,

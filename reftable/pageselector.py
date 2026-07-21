@@ -7,14 +7,14 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import configo
+import configos
 import texmex
-import utila
+import utilo
 
 import reftable.toc.create
 import reftable.toc.strategy.regex
 
-HEADLINE_SIZE_MIN = configo.HV_FLOAT_PLUS(default=15.0)
+HEADLINE_SIZE_MIN = configos.HV_FLOAT_PLUS(default=15.0)
 
 
 def select_contentpages(
@@ -23,7 +23,7 @@ def select_contentpages(
     strategy: callable = None,
     skip_higherqual_level_three: bool = True,
     valid_lines_perpage_min=None,
-) -> utila.Ints:
+) -> utilo.Ints:
     """Use simple approach to decide which page contains table content."""
     if strategy is None:
         strategy = reftable.toc.strategy.regex.parse_page
@@ -31,16 +31,16 @@ def select_contentpages(
     for page in textnavigators:
         if skip_page_byheadline(page, noheadline=wrong_table):
             continue
-        utila.debug(f'page: {page.page}')
+        utilo.debug(f'page: {page.page}')
         current_page = strategy(page)
         if not current_page:
-            utila.debug(f'could not parse any valid line on page: {page.page}')
+            utilo.debug(f'could not parse any valid line on page: {page.page}')
             continue
         pageslines = texmex.count_textlines(page, remove_empty=True)
         if not pageslines:
             continue
         matched_percent = len(current_page) / pageslines
-        utila.info(f'page percent: {matched_percent} on page: {page.page}')
+        utilo.info(f'page percent: {matched_percent} on page: {page.page}')
         if valid_lines_perpage_min is not None and matched_percent < valid_lines_perpage_min:
             # avoid missdetection in random pages if only few lines are
             # missdetected as toc line.
@@ -59,11 +59,11 @@ def select_contentpages(
                 # level is mostly a table of content level
                 continue
         selected.append(page.page)
-    selected = sorted(utila.unique(selected))
+    selected = sorted(utilo.unique(selected))
     # select biggest connected chunck
     if selected:
-        selected = utila.groupby_diff(selected, maxdiff=1)
-        selected = utila.longest(selected)
+        selected = utilo.groupby_diff(selected, maxdiff=1)
+        selected = utilo.longest(selected)
     return selected
 
 
@@ -73,7 +73,7 @@ def skip_page_byheadline(ptn, noheadline) -> bool:
     firstheadline = headline(ptn)
     if not firstheadline:
         return False
-    wrong_headline = utila.verysimilar(
+    wrong_headline = utilo.verysimilar(
         current=firstheadline,
         expected=noheadline,
     )

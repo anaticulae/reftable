@@ -10,13 +10,13 @@
 import contextlib
 import re
 
-import elements
-import utila
+import elementae
+import utilo
 
 import reftable.toc
 
 
-@utila.cacheme
+@utilo.cacheme
 def parse(line: str) -> reftable.toc.TocLine:
     """\
     >>> parse('5. Initiative: ´Demenzfreundliche Kommune`................. 45')
@@ -33,7 +33,7 @@ def parse(line: str) -> reftable.toc.TocLine:
     assert isinstance(line, str), type(line)
     # see bachelor128
     # 8.1         Fazit.................. 87
-    line = utila.normalize_whitespaces(line)
+    line = utilo.normalize_whitespaces(line)
     for pattern in [
             EXTENDED_PATTERN_LETTER,
             EXTENDED_PATTERN,
@@ -181,13 +181,13 @@ NO_LEVEL = re.compile(
 
 def dictpattern() -> str:
     special = {'A'}
-    headlines = special | elements.HEADLINES
+    headlines = special | elementae.HEADLINES
     escaped = [re.escape(item) for item in headlines]
     result = '|'.join(escaped)
     return result
 
 
-DICTIONARY = utila.compiles(
+DICTIONARY = utilo.compiles(
     '^'
     f'(?P<text>({dictpattern()}))'
     r'([ \.]{0,128})'
@@ -206,7 +206,7 @@ def extract_match(match: re.Match) -> reftable.toc.TocLine:
     with contextlib.suppress(IndexError):
         raw_location = match['raw_page']
     # prepare title
-    title = utila.normalize_text(
+    title = utilo.normalize_text(
         title,
         merge_divis=False,
         normalize_newline=True,
@@ -217,7 +217,7 @@ def extract_match(match: re.Match) -> reftable.toc.TocLine:
         level=level,
         title=title,
         page=page,
-        raw=utila.extract_match(match),
+        raw=utilo.extract_match(match),
         raw_level=level,
         pdfpage=raw_location,
     )
@@ -236,4 +236,4 @@ LINESTART = re.compile(
 """,
     flags=re.VERBOSE | re.MULTILINE | re.IGNORECASE,
 )
-LINEEND = utila.compiles(PAGE + r'(\n|$)')
+LINEEND = utilo.compiles(PAGE + r'(\n|$)')

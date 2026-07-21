@@ -9,44 +9,44 @@
 
 import functools
 
+import hoverpower
 import iamraw
-import power
 import pytest
 import serializeraw
-import utila
-import utilatest
+import utilo
+import utilotest
 
 import reftable
 import tests
 
-ARCHIVE = utila.join(reftable.ROOT, 'tests/abbrev/expected', exist=True)
+ARCHIVE = utilo.join(reftable.ROOT, 'tests/abbrev/expected', exist=True)
 
 
 @pytest.mark.parametrize('source', [
-    pytest.param(power.TECH019_PDF, id='techo019'),
-    pytest.param(power.BACHELOR090_PDF, id='bachelor090'),
+    pytest.param(hoverpower.TECH019_PDF, id='techo019'),
+    pytest.param(hoverpower.BACHELOR090_PDF, id='bachelor090'),
 ])
 def test_validate_abbrev(source, td, mp):
-    utilatest.fixture_requires(source)
+    utilotest.fixture_requires(source)
     pages = select_abbrev(source)
     if not pages:
         raise ValueError('no abbrev table found')
     Evaluate(
         source=source,
-        pages=utila.from_tuple(pages, separator=','),
+        pages=utilo.from_tuple(pages, separator=','),
         workdir=td.tmpdir,
         mp=mp,
     ).evaluate()
 
 
-class Evaluate(utilatest.BaseLiner):
+class Evaluate(utilotest.BaseLiner):
 
     def __init__(self, source, pages, workdir, mp):
         super().__init__(
             program=functools.partial(tests.run, mp=mp),
             step='abbrev',
             pages=pages,
-            source=power.link(source),
+            source=hoverpower.link(source),
             workdir=workdir,
             archive=ARCHIVE,
             loader=self.load_table,
@@ -63,15 +63,15 @@ class Evaluate(utilatest.BaseLiner):
         for item in value:
             line = f'{item.short:<15} {item.description}'
             collected.append(line)
-        raw = utila.NEWLINE.join(collected)
+        raw = utilo.NEWLINE.join(collected)
         return raw
 
 
 def select_abbrev(source: str) -> tuple:
-    # TODO: REPLACE WITH UTILA TEST CODE
-    generated = power.link(source)
+    # TODO: REPLACE WITH utilo TEST CODE
+    generated = hoverpower.link(source)
     sections = serializeraw.load_sections(generated)
-    flat = utila.flatten_content(sections)
+    flat = utilo.flatten_content(sections)
     pages = []
     for item in flat:
         if not isinstance(item, iamraw.sections.AbbreviationTable):

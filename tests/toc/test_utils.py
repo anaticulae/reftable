@@ -7,7 +7,7 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 import reftable.toc
 
@@ -65,4 +65,4 @@ def test_toc_sort_byposition():
     """
     result = reftable.toc.sort_byposition(HEADLINES, CONTENT)
     pages = [item.page for item in result]
-    assert utila.isascending(pages)
+    assert utilo.isascending(pages)

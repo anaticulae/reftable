@@ -10,14 +10,14 @@
 import dataclasses
 import re
 
-import configo
-import elements
+import configos
+import elementae
 import iamraw
-import utila
+import utilo
 
 import reftable.toc
 
-APPENDIX_LEVEL = configo.HV_INT_PLUS(default=100)
+APPENDIX_LEVEL = configos.HV_INT_PLUS(default=100)
 
 
 def groupby_chapter(items: reftable.toc.TocLines):
@@ -107,10 +107,10 @@ def level(item: str) -> Level:
     # Abbildung, but this is not the correct Point.
     if item is None:
         return None
-    number = elements.level_numbered(item)
+    number = elementae.level_numbered(item)
     if number is not None:
         return Level(value=number, raw=item)
-    if value := utila.arabic(item):
+    if value := utilo.arabic(item):
         return RomanLevel(value=value, raw=item)
     try:
         letter, _ = item.split('.', maxsplit=1)
@@ -121,19 +121,19 @@ def level(item: str) -> Level:
     if letter in 'ABCDEFGH':
         result = AppendixLevel(value=letter, character=letter, raw=item)
         return result
-    if converted := elements.level_steps(item):
+    if converted := elementae.level_steps(item):
         result = StepLevel(value=converted, raw=item)  # pylint:disable=R0204
         return result
-    utila.error(f'could not convert to level: {item}')
+    utilo.error(f'could not convert to level: {item}')
     return None
 
 
-# TODO: MOVE TO ELEMENTS
+# TODO: MOVE TO elementae
 def groupby_level(toc: reftable.toc.TocLines) -> iamraw.Toc:
     if not toc:
         # empty toc or no toc
         return iamraw.Toc()
-    style = elements.toc_style(toc)
+    style = elementae.toc_style(toc)
     if style == iamraw.TocStyle.NUMBERED:
         return groupby_level_numbered(toc)
     if style == iamraw.TocStyle.SECTIONED:
@@ -168,7 +168,7 @@ def groupby_level_steps(toc: reftable.toc.TocLines) -> iamraw.Toc:
     """
     return grouper_level(
         toc,
-        levelme=elements.level_steps,
+        levelme=elementae.level_steps,
         style=iamraw.TocStyle.STEPPED,
     )
 
@@ -195,15 +195,15 @@ def grouper_level(
     outlines = []
     for line in toc:
         if not line:
-            utila.error(f'problem while processing lines: {line}')
+            utilo.error(f'problem while processing lines: {line}')
             continue
         if not isinstance(line, reftable.toc.TocLine):
             continue
         levels = levelme(line.level)
         if levels is None:
-            utila.error(line)
-            utila.error(line.level)
-            utila.log('restore old behavior')
+            utilo.error(line)
+            utilo.error(line.level)
+            utilo.log('restore old behavior')
             levels = 1
         section = iamraw.SectionRaw(
             level=levels,
@@ -230,7 +230,7 @@ def level_zero(items):
     # TODO: REMOVE THIS?
     level_min = min(
         (item.level for item in items if item.level is not None),
-        default=utila.INF,
+        default=utilo.INF,
     )
     if not level_min:
         for item in items:
@@ -241,13 +241,13 @@ def level_zero(items):
 def determine_level(levels) -> int:
     if levels is None:
         return 1
-    numbered = elements.level_numbered(levels)
+    numbered = elementae.level_numbered(levels)
     if numbered is None:
         return 1
     return numbered
 
 
-@utila.cacheme
+@utilo.cacheme
 def level_sections(raw: str) -> int:  # pylint:disable=R0911
     """Convert number to raw level.
 
@@ -267,7 +267,7 @@ def level_sections(raw: str) -> int:  # pylint:disable=R0911
     >>> level_sections('Umwelt und Klimawandel')
     3
     """
-    # TODO: MOVE TO ELEMENTS
+    # TODO: MOVE TO elementae
     raw = raw.strip() if raw else None
     if not raw:
         return 3

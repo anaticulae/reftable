@@ -32,7 +32,7 @@ Nearly working
 import geostrat
 import iamraw
 import texmex
-import utila
+import utilo
 
 import reftable.abbrev
 
@@ -44,7 +44,7 @@ class GeometryAbbreviationParser(reftable.abbrev.AbbreviationExtractorStrategy):
         for page in self.loaded.normal:
             parsed = parse_page(page)
             if parsed is None:
-                utila.info(f'could not parse page: {page.page}')
+                utilo.info(f'could not parse page: {page.page}')
                 continue
             for item in parsed:
                 ready.append(item)

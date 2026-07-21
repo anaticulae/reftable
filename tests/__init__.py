@@ -7,12 +7,12 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
-import utila
-import utilatest
+import hoverpower
+import utilo
+import utilotest
 
 import reftable
 
-power.setup(reftable.ROOT)
+hoverpower.setup(reftable.ROOT)
 
-run, fail = utilatest.create_cli_runner(reftable)
+run, fail = utilotest.create_cli_runner(reftable)

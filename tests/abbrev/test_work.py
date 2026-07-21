@@ -7,18 +7,18 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import hoverpower
 import iamraw
-import power
 import serializeraw
-import utilatest
+import utilotest
 
 import reftable.feature.abbrev
 
 
-@utilatest.longrun
-@utilatest.requires(power.BACHELOR037_PDF)
+@utilotest.longrun
+@utilotest.requires(hoverpower.BACHELOR037_PDF)
 def test_abbreviation_work():
-    source = power.link(power.BACHELOR037_PDF)
+    source = hoverpower.link(hoverpower.BACHELOR037_PDF)
 
     text = iamraw.path.text(source)
     textposition = iamraw.path.textposition(source)

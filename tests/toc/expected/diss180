@@ -6,7 +6,7 @@ ABSTRACT OF THE DISSERTATION
 INTRODUCTION
 CHAPTER 1: Software Architecture
     Run-time Abstraction
-    Elements
+    elementae
     Configurations
     Properties
     Styles
@@ -36,7 +36,7 @@ CHAPTER 4: Designing the Web Architecture: Problems and Insights
     Summary
 CHAPTER 5: Representational State Transfer (REST)
     Deriving REST
-    REST Architectural Elements
+    REST Architectural elementae
     REST Architectural Views
     Related Work
     Summary

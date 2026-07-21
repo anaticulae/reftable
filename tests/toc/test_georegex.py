@@ -7,18 +7,18 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import hoverpower
 import serializeraw
 import texmex
-import utilatest
+import utilotest
 
 import reftable.toc.strategy.georegex as gtsg
 
 
 def master72() -> texmex.PTNs:
-    utilatest.fixture_requires(power.MASTER072_PDF)
+    utilotest.fixture_requires(hoverpower.MASTER072_PDF)
     result = serializeraw.ptn_frompath(
-        power.link(power.MASTER072_PDF),
+        hoverpower.link(hoverpower.MASTER072_PDF),
         pages=(1, 2),
         prefix='oneline',
     )
@@ -26,16 +26,16 @@ def master72() -> texmex.PTNs:
 
 
 def bachelor111():
-    utilatest.fixture_requires(power.BACHELOR111_PDF)
+    utilotest.fixture_requires(hoverpower.BACHELOR111_PDF)
     result = serializeraw.ptcn_frompath(
-        power.link(power.BACHELOR111_PDF),
+        hoverpower.link(hoverpower.BACHELOR111_PDF),
         pages=(1, 2, 3, 4),
         prefix='oneline',
     )
     return result
 
 
-@utilatest.longrun
+@utilotest.longrun
 def test_toc_geometry_analyse_page_master72():
     data = master72()
 
@@ -48,7 +48,7 @@ def test_toc_geometry_analyse_page_master72():
     assert len(parsed) == 4
 
 
-@utilatest.longrun
+@utilotest.longrun
 def test_toc_geometry_analyse_page_bachelor111():
     """Check that geometry approach parses and group toc lines correctly."""
 

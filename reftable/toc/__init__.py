@@ -9,7 +9,7 @@
 
 import dataclasses
 
-import utila
+import utilo
 
 
 @dataclasses.dataclass
@@ -52,7 +52,7 @@ def sort_byposition(lines: TocLines, content: str) -> TocLines:
 def whitespace(content, pattern):
     """Replace `pattern` with whitespace and avoid removing newlines."""
     replacement = ''.join([
-        ' ' if item is not utila.NEWLINE else utila.NEWLINE for item in pattern
+        ' ' if item is not utilo.NEWLINE else utilo.NEWLINE for item in pattern
     ])
     result = content.replace(pattern, replacement)
     return result

@@ -7,9 +7,9 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import elements.headline.lookup
+import elementae.headline.lookup
 import iamraw
-import utila
+import utilo
 
 import reftable.abbrev
 
@@ -31,22 +31,22 @@ def parse_page(content):
     result = []
     for line in content:
         raw = line.text
-        utila.debug(f'parse: {raw}')
+        utilo.debug(f'parse: {raw}')
         try:
             short, description = raw.split(maxsplit=1)
         except ValueError:
             if not isexcluded(raw):
-                utila.debug(f'could not parse abbreviation: {raw}')
+                utilo.debug(f'could not parse abbreviation: {raw}')
             continue
         if isexcluded(short) or isexcluded(description):
-            utila.info(f'skip: {short}, {description}')
+            utilo.info(f'skip: {short}, {description}')
             continue
         short, description = short.strip(), description.strip()
         parsed = iamraw.Abbreviation(
             short=short,
             description=description,
         )
-        utila.debug(f'parsed: {parsed}')
+        utilo.debug(f'parsed: {parsed}')
         result.append(parsed)
     return result
 
@@ -54,13 +54,13 @@ def parse_page(content):
 def isexcluded(item: str) -> bool:
     # TODO: ADD MORE SOPHISTICATED DOUBLE COLUMN CHECKER
     item = item.strip().lower()
-    if item in elements.headline.lookup.HEADLINES:
+    if item in elementae.headline.lookup.HEADLINES:
         return True
     if item in NO_ABBREVIATION:
         return True
     return False
 
 
-NO_ABBREVIATION = utila.splitlines("""\
+NO_ABBREVIATION = utilo.splitlines("""\
 BESCHREIBUNG
 """)

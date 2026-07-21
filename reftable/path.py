@@ -7,20 +7,20 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import utila
+import utilo
 
 
 def abbreviation(path: str, prefix: str = '') -> str:
-    return utila.pathconnector(path, 'reftable', 'abbrev_abbrev', prefix)
+    return utilo.pathconnector(path, 'reftable', 'abbrev_abbrev', prefix)
 
 
 def toc(path: str, prefix: str = '') -> str:
-    return utila.pathconnector(path, 'reftable', 'toc_toc', prefix)
+    return utilo.pathconnector(path, 'reftable', 'toc_toc', prefix)
 
 
 def figure(path: str, prefix: str = '') -> str:
-    return utila.pathconnector(path, 'reftable', 'figure_figure', prefix)
+    return utilo.pathconnector(path, 'reftable', 'figure_figure', prefix)
 
 
 def table(path: str, prefix: str = '') -> str:
-    return utila.pathconnector(path, 'reftable', 'table_table', prefix)
+    return utilo.pathconnector(path, 'reftable', 'table_table', prefix)

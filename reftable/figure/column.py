@@ -8,7 +8,7 @@
 # =============================================================================
 
 import geostrat
-import utila
+import utilo
 
 import reftable.figure
 import reftable.pageselector
@@ -29,9 +29,9 @@ def run(ptcns) -> list:
     )
     if not pages:
         return []
-    ptcns = utila.select_pages(ptcns, pages)
+    ptcns = utilo.select_pages(ptcns, pages)
     extracted = [parse(item) for item in ptcns]
-    result = utila.flat(extracted)
+    result = utilo.flat(extracted)
     return result
 
 
@@ -42,7 +42,7 @@ def parse(ptcn) -> reftable.toc.TocLines:
     result = []
     for level, title in parsed:
         if not check_level(level):
-            utila.debug(f'invalid figure level: {level}')
+            utilo.debug(f'invalid figure level: {level}')
             continue
         item = reftable.toc.TocLine(
             level=level,
@@ -53,7 +53,7 @@ def parse(ptcn) -> reftable.toc.TocLines:
     return result
 
 
-LEVEL_START = utila.compiles(r"""
+LEVEL_START = utilo.compiles(r"""
     ^
     (
         ABBILDUNG|

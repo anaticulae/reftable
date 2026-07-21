@@ -9,52 +9,52 @@
 
 import functools
 
+import hoverpower
 import iamraw
-import power
 import pytest
 import serializeraw
-import utila
-import utilatest
+import utilo
+import utilotest
 
 import reftable
 import tests
 
-ARCHIVE = utila.join(reftable.ROOT, 'tests/table/expected', exist=True)
+ARCHIVE = utilo.join(reftable.ROOT, 'tests/table/expected', exist=True)
 
 
 #  TODO: IMPROVE PARSER A.10 and A.11 is not fully correct
 @pytest.mark.parametrize('source, pages', [
     pytest.param(
-        power.BACHELOR090_PDF,
+        hoverpower.BACHELOR090_PDF,
         (9, 11),
         id='bachelor090',
     ),
     pytest.param(
-        power.BACHELOR111_PDF,
+        hoverpower.BACHELOR111_PDF,
         (98, 99),
         id='bachelor111',
     ),
 ])
-@utilatest.nightly
+@utilotest.nightly
 def test_tabletable_validate(source, pages, td, mp):
-    utilatest.fixture_requires(source)
+    utilotest.fixture_requires(source)
     Evaluate(
         source=source,
-        pages=utila.from_tuple(pages, separator=','),
-        expected=utila.file_name(source),
+        pages=utilo.from_tuple(pages, separator=','),
+        expected=utilo.file_name(source),
         workdir=td.tmpdir,
         mp=mp,
     ).evaluate()
 
 
-class Evaluate(utilatest.BaseLiner):
+class Evaluate(utilotest.BaseLiner):
 
     def __init__(self, source, pages, expected, workdir, mp):
         super().__init__(
             program=functools.partial(tests.run, mp=mp),
             step='table',
             pages=pages,
-            source=power.link(source),
+            source=hoverpower.link(source),
             workdir=workdir,
             archive=ARCHIVE,
             loader=self.load_tabletable,
@@ -86,5 +86,5 @@ def tables_raw(toc: iamraw.Toc) -> str:
 
     for item in toc:
         result.extend(recursive(item, level=0))
-    titles = utila.NEWLINE.join(result)
+    titles = utilo.NEWLINE.join(result)
     return titles

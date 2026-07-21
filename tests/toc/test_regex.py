@@ -7,23 +7,23 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
+import hoverpower
 import iamraw.path
-import power
 import pytest
 import serializeraw
-import utila
-import utilatest
+import utilo
+import utilotest
 
 import reftable.feature.toc
 import reftable.toc.basic.lineregex
 import reftable.toc.strategy.regex as gtsr
 
 
-@utilatest.longrun
-@utilatest.requires(power.MASTER072_PDF)
+@utilotest.longrun
+@utilotest.requires(hoverpower.MASTER072_PDF)
 def test_extract_toc_from_master_pages72_page_1and2():
     master72_text = iamraw.path.text(
-        power.link(power.MASTER072_PDF),
+        hoverpower.link(hoverpower.MASTER072_PDF),
         prefix='oneline',
     )
     document = serializeraw.load_document(master72_text)
@@ -229,7 +229,7 @@ Versicherung selbständiger Arbeit"""
 def test_toc_parse_content():
     parsed = gtsr.parse(CONTENT)
     assert len(parsed) == 9
-    result = utila.NEWLINE.join([item.title for item in parsed])
+    result = utilo.NEWLINE.join([item.title for item in parsed])
     assert result == EXPECTED
 
 

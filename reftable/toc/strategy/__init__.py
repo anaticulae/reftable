@@ -11,9 +11,9 @@ import abc
 import dataclasses
 import typing
 
-import elements.headline.lookup
+import elementae.headline.lookup
 import texmex
-import utila
+import utilo
 
 import reftable.toc
 import reftable.toc.create
@@ -33,14 +33,14 @@ class ExtractionResult:
 
     def __str__(self):
         collected = [str(self.strategy), 'VALID:']
-        for item in utila.flat(self.content):
+        for item in utilo.flat(self.content):
             collected.append(item.raw)
         if self.invalid:
             collected.append('INVALID:')
             for item in self.invalid:
                 collected.append(item.raw)
         collected.append('')
-        result = utila.NEWLINE.join(collected)
+        result = utilo.NEWLINE.join(collected)
         return result
 
 
@@ -64,8 +64,8 @@ class ExtractorStrategy(abc.ABC):
             strategy=self.__class__.__name__,
         )
         content = extracted.content
-        if too_many_dots_in_title(utila.flat(content)):
-            utila.debug(f'too many dots in title: {self.__class__.__name__}')
+        if too_many_dots_in_title(utilo.flat(content)):
+            utilo.debug(f'too many dots in title: {self.__class__.__name__}')
             content = []
         result = ExtractionResult(
             content=content,
@@ -77,7 +77,7 @@ class ExtractorStrategy(abc.ABC):
 
 
 def group(extracted: reftable.toc.TocLines, strategy: str) -> ExtractionResult:
-    right, invalid = utila.partition(
+    right, invalid = utilo.partition(
         key=lambda x: isinstance(x, reftable.toc.TocLine),
         items=extracted,
     )
@@ -101,10 +101,10 @@ def remove_headline(
 ) -> texmex.PTN:
     """Remove table of content headline to improve extraction result."""
     if not headlines:
-        headlines = elements.headline.lookup.TOC
+        headlines = elementae.headline.lookup.TOC
     result = content.hull_empty()
     for item in content:
-        if count > 0 and utila.verysimilar(current=item.text, expected=headlines): # yapf:disable
+        if count > 0 and utilo.verysimilar(current=item.text, expected=headlines): # yapf:disable
             count -= 1
             continue
         result.insert(item.text, item.style, item.bounding)
@@ -119,8 +119,8 @@ def remove_nonconnected_tocs(items) -> list:
     if not items:
         return []
     pagenumbers = [item.pdfpage for item in items]
-    pagenumbers = utila.groupby_diff(pagenumbers, sort=True, enlarge=True)
-    valid_pages = utila.longest(pagenumbers, number=1)
+    pagenumbers = utilo.groupby_diff(pagenumbers, sort=True, enlarge=True)
+    valid_pages = utilo.longest(pagenumbers, number=1)
     # remove non included items
     include = [item for item in items if item.pdfpage in valid_pages]
     return include

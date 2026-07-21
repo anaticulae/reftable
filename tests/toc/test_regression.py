@@ -7,18 +7,18 @@
 # be prosecuted under federal law. Its content is company confidential.
 # =============================================================================
 
-import power
+import hoverpower
 import serializeraw
-import utilatest
+import utilotest
 
 import reftable
 import tests
 
 
-@utilatest.requires(power.DISS157_PDF)
+@utilotest.requires(hoverpower.DISS157_PDF)
 def test_appendix_level(td, mp):
     """Before this test, all appendix level where set to level 4."""
-    source = power.link(power.DISS157_PDF)
+    source = hoverpower.link(hoverpower.DISS157_PDF)
     tests.run(
         f'--toc -i {source} -o {td.tmpdir}',
         mp=mp,
