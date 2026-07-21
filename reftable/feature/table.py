@@ -73,8 +73,8 @@ def work(
 
 
 EMPTY = serializeraw.dump_toc(iamraw.Toc())
-NO_TABLES = (elementae.ABBREVIATION | elementae.TOC | elementae.FIGURETABLE |
-             elementae.SYMBOLTABLE)
+NO_TABLES = utilo.unique(elementae.ABBREVIATION + elementae.TOC +
+                         elementae.FIGURETABLE + elementae.SYMBOLTABLE)
 
 
 def headline_start(ptn) -> bool:

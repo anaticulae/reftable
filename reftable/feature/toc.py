@@ -18,6 +18,7 @@ Outdated approaches
 
 import configos
 import elementae
+import elementae.headline.lookup
 import serializeraw
 import utilo
 
@@ -95,4 +96,8 @@ def dump(extracted):
     return dumped
 
 
-NO_TOC = elementae.headline.lookup.HEADLINES - elementae.headline.lookup.TOC
+# NO_TOC = elementae.headline.lookup.HEADLINES - elementae.headline.lookup.TOC
+NO_TOC = [
+    item for item in elementae.headline.lookup.HEADLINES
+    if item not in elementae.headline.lookup.TOC
+]

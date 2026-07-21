@@ -9,10 +9,11 @@
 
 import configos
 import elementae
+import utilo
 
 # minimal percentage of figure lines per page
 TOFS_PER_PAGE_MIN = configos.HV_PERCENT_PLUS(default=20, limit=100.0)
 
-NO_FIGURES = (elementae.ABBREVIATION | elementae.BIBLIOGRAPHY |
-              elementae.GLOSSARY | elementae.SYMBOLTABLE |
-              elementae.TABLETABLE | elementae.TOC)
+NO_FIGURES = utilo.unique(elementae.ABBREVIATION + elementae.BIBLIOGRAPHY +
+                          elementae.GLOSSARY + elementae.SYMBOLTABLE +
+                          elementae.TABLETABLE + elementae.TOC)
