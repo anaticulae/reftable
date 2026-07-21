@@ -107,6 +107,7 @@ exclude = [
 packages = [
     "BACHELOR",
     "BOOK",
+    "DISS",
     "DOCU",
     "HOME",
     "MASTER",
