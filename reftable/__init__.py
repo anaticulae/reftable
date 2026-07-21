@@ -7,11 +7,13 @@
 # be prosecuted under federal law. Its content is company confidential.
 #==============================================================================
 
+import importlib.metadata
 import os
 
 import reftable.path
 
-__version__ = '0.6.0'
+PROCESS = 'reftable'
+
+__version__ = importlib.metadata.version(PROCESS)
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
-PROCESS = 'reftable'

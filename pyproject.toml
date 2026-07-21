@@ -30,6 +30,8 @@ content-type = "text/markdown"
 
 [project.optional-dependencies]
 dev = [
+    "capita-ref>=1.0.1,<2.0.0",
+    "capita>=1.25.3,<2.0.0",
     "cleanup>=1.0.4,<2.0.0",
     "gennex==1.0.3",
     "groupmes==1.1.0",
@@ -38,7 +40,6 @@ dev = [
     "ibidem==1.0.2",
     "pagenumber==1.0.0",
     "rawmaker==2.40.5",
-    "capita>=1.25.3,<2.0.0",
     "utilotest==1.0.4",
 ]
 
@@ -70,16 +71,19 @@ changelog_file = "CHANGELOG"
 
 [tool.semantic_release.commit_parser_options]
 patch_tags = [
-    "fix",
-    "perf",
     "build",
     "chore",
     "ci",
-    "docs",
-    "style",
-    "refactor",
-    "test",
     "deps",
+    "docs",
+    "fix",
+    "perf",
+    "refactor",
+    "style",
+    "test",
+]
+minor_tags = [
+    "feat",
 ]
 
 [tool.setuptools.packages.find]
@@ -97,4 +101,15 @@ include = [
 ]
 exclude = [
     "tests*",
+]
+
+[tool.hoverpower]
+packages = [
+    "BACHELOR",
+    "BOOK",
+    "DOCU",
+    "HOME",
+    "MASTER",
+    "PAPER",
+    "TECH",
 ]
